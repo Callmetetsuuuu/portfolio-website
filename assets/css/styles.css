@@ -123,6 +123,14 @@ body.collapsed #sidebar hr {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* Account for fixed header */
+}
+
+/* Section content spacing for scroll-based SPA */
+.section-content {
+  scroll-margin-top: 80px;
+  min-height: 60vh;
 }
 
 ::-webkit-scrollbar {

@@ -138,9 +138,7 @@
         </div>
       </nav>
 
-      <!-- <hr class="my-2 border-border"> -->
-
-      <nav class="space-y-1">
+      <nav class="space-y-1 mt-2">
         <div class="nav-item" title="Games" data-page="games">
           <div class="icon-wrapper">
             <i class="ph ph-game-controller"></i>
@@ -169,7 +167,511 @@
     <main
       class="flex-1 p-6 bg-surface overflow-y-auto page-main lg:ml-[240px] transition-[margin] duration-150 ease-in-out">
       <div class="w-full" id="main-content">
-        <!-- Page content will be loaded here dynamically -->
+        <!-- About Section -->
+        <section id="about" class="section-content">
+          <!-- Banner Section -->
+          <div id="banner" class="max-h-[200px] mb-1 w-full overflow-hidden bg-center bg-cover">
+            <div class="relative w-full overflow-hidden rounded-lg cursor-pointer group" onclick="showImageModal()">
+              <img src="assets/images/banner.jpg" alt="Banner" id="banner-img"
+                class="w-full h-full object-cover block" />
+              <div id="banner-overlay" class="absolute inset-0 bg-gradient-to-b from-transparent to-white/60"></div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <i class="ph ph-arrows-out text-white text-3xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Modal -->
+          <div id="imageModal" class="fixed inset-0 z-[60] hidden items-center justify-center">
+            <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300"
+              onclick="hideImageModal()"></div>
+            <div class="relative z-[70] max-w-7xl mx-auto px-4 w-full">
+              <button onclick="hideImageModal()"
+                class="absolute -top-12 right-4 text-white hover:text-gray-300 transition-colors">
+                <i class="ph ph-x text-2xl"></i>
+              </button>
+              <img src="assets/images/banner.jpg" alt="Banner Full"
+                class="w-full h-auto max-h-[85vh] object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <!-- About me -->
+          <div class="max-w-5xl mb-12">
+            <div>
+              <!-- Hero Section -->
+              <div class="flex flex-col md:flex-row items-center md:items-start gap-6 p-4">
+                <!-- Profile Image -->
+                <div class="relative w-48 h-48 rounded-2xl overflow-hidden"
+                  style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                  <img src="assets/images/prof.png" alt="Juan Luna" class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 ring-2 ring-primary/20 rounded-2xl"></div>
+                </div>
+
+                <!-- Info -->
+                <div class="text-center md:text-left flex-1">
+                  <div class="md:h-48 flex flex-col justify-between gap-3">
+                    <div>
+                      <div class="flex items-center justify-center md:justify-start gap-3">
+                        <h1 class="text-4xl font-bold mb-1">Juan Luna</h1>
+                      </div>
+                      <div class="chip flex items-center justify-center md:justify-start w-fit px-1.5 pr-2.5">
+                        <span class="text-primary" title="Trusted freelancer" aria-hidden="true">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                          </svg>
+                        </span>
+                        <span>Computer Engineering &amp; Fullstack Developer</span>
+                      </div>
+                      <div class="flex flex-wrap gap-2 text-sm mt-2 justify-center md:justify-start">
+                        <span class="chip"><i class="ph ph-briefcase"></i> Freelance</span>
+                        <span class="chip"><i class="ph ph-map-pin"></i> Philippines</span>
+                        <span class="chip"><i class="ph ph-calendar"></i> 22 yrs old</span>
+                      </div>
+                      <!-- Summary of this site -->
+                      <p class="mt-4 text-sm text-text2 leading-relaxed">
+                        This portfolio is a calm, single-page style experience that highlights my web, backend, and game
+                        development work. The sidebar lets you move between sections like About, Projects, Skills,
+                        Eligibility,
+                        Games, Web Apps, and AI Projects without leaving the layout, while the header gives you quick
+                        access to
+                        search, GitHub, resume, and contact.
+                      </p>
+                    </div>
+                    <!-- Metrics -->
+                    <div class="mt-1 metric-container grid grid-cols-3 gap-3 max-w-md mx-auto md:mx-0">
+                      <div class="px-3 py-2 rounded-lg flex items-center gap-3"
+                        style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                        <i class="ph ph-eye text-lg text-text2"></i>
+                        <div>
+                          <div id="visitsCount" class="text-sm font-semibold">1.2K</div>
+                          <div class="text-xs text-text2">Visits</div>
+                        </div>
+                      </div>
+
+                      <div id="likeBtn" role="button" tabindex="0" aria-pressed="false"
+                        class="px-3 py-2 rounded-lg bg-white flex items-center gap-3 metric-btn relative" title="Like"
+                        style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                        <i id="likeIcon" class="ph ph-thumbs-up text-lg text-text2"></i>
+                        <div>
+                          <div id="likeCount" class="text-sm font-semibold">847</div>
+                          <div class="text-xs text-text2">Likes</div>
+                        </div>
+                        <span id="likeFeedback" class="share-feedback text-xs text-primary hidden">Liked</span>
+                      </div>
+
+                      <div id="shareBtn" role="button" tabindex="0"
+                        class="px-3 py-2 rounded-lg bg-white flex items-center gap-3 metric-btn relative" title="Share"
+                        style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                        <i id="shareIcon" class="ph ph-copy text-lg text-text2"></i>
+                        <div>
+                          <div id="shareCount" class="text-sm font-semibold">0</div>
+                          <div class="text-xs text-text2">Profile Link</div>
+                        </div>
+                        <span id="shareFeedback" class="share-feedback text-xs text-primary hidden">Copied!</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick skill + gallery + certs overview -->
+          <div class="max-w-5xl mx-auto mb-10 px-4 space-y-6">
+            <div class="grid gap-4 md:grid-cols-3">
+              <!-- Skills highlight -->
+              <div class="p-4 rounded-xl bg-hover h-full flex flex-col gap-3">
+                <h2 class="text-base font-semibold flex items-center gap-2">
+                  <i class="ph ph-code text-primary"></i>
+                  Skill snapshot
+                </h2>
+                <p class="text-sm text-text2">
+                  I work across the stack: from clean, responsive interfaces in HTML/CSS and JavaScript, to REST APIs in
+                  Node/PHP/Python, and relational data with MySQL. I also enjoy designing flows and wireframes in Figma
+                  and
+                  Canva to keep UX simple and intentional.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-1">
+                  <span class="chip text-xs"><i class="ph ph-browser"></i> Frontend</span>
+                  <span class="chip text-xs"><i class="ph ph-server"></i> Backend</span>
+                  <span class="chip text-xs"><i class="ph ph-database"></i> MySQL</span>
+                  <span class="chip text-xs"><i class="ph ph-palette"></i> Figma &amp; Canva</span>
+                </div>
+              </div>
+
+              <!-- Personal gallery preview -->
+              <div class="p-4 rounded-xl bg-hover h-full flex flex-col gap-3">
+                <h2 class="text-base font-semibold flex items-center gap-2">
+                  <i class="ph ph-images-square text-primary"></i>
+                  Personal gallery
+                </h2>
+                <p class="text-sm text-text2">
+                  A small gallery of my profile, work-in-progress shots, and UI experiments. In the future this will
+                  expand into
+                  a full gallery section with more project photos and behind-the-scenes images.
+                </p>
+                <div class="mt-1 grid grid-cols-3 gap-2 text-[10px] text-text2">
+                  <div
+                    class="aspect-square rounded-lg bg-surface border border-border flex items-center justify-center">
+                    <span>Profile</span>
+                  </div>
+                  <div
+                    class="aspect-square rounded-lg bg-surface border border-border flex items-center justify-center">
+                    <span>UI shots</span>
+                  </div>
+                  <div
+                    class="aspect-square rounded-lg bg-surface border border-border flex items-center justify-center">
+                    <span>Game dev</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Certifications / achievements summary -->
+              <div class="p-4 rounded-xl bg-hover h-full flex flex-col gap-3">
+                <h2 class="text-base font-semibold flex items-center gap-2">
+                  <i class="ph ph-certificate text-primary"></i>
+                  Certs &amp; achievements
+                </h2>
+                <ul class="text-sm text-text2 space-y-1.5">
+                  <li>🏆 Best Capstone Project 2025 — Emotion-based music recommendation system.</li>
+                  <li>📚 Dean's Lister for 3 consecutive semesters.</li>
+                  <li>💻 Active GitHub contributor with 50+ commits/month on average.</li>
+                </ul>
+                <p class="text-xs text-text2 mt-1">
+                  More detailed certificates and documents can be added here in the future as a downloadable gallery.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div id="contact" class="max-w-2xl mx-auto text-center mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Get in Touch</h2>
+            <p class="text-text2 mb-6">"Let's build something calm and powerful together."</p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <a href="mailto:johnleonard.libanan@gmail.com"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover text-white">
+                <i class="ph ph-envelope"></i>
+                <span>Email me</span>
+              </a>
+              <a href="https://github.com/johnleonard03" target="_blank"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text">
+                <i class="ph ph-github-logo"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/johnleonardlibanan" target="_blank"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text">
+                <i class="ph ph-linkedin-logo"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-content mb-12">
+          <h2 class="text-2xl font-semibold mb-4">Latest Works</h2>
+
+          <div class="tabs mb-4" role="tablist" aria-label="Project categories">
+            <button class="tab-btn active" data-tab="latest" role="tab" aria-selected="true">Latest</button>
+            <button class="tab-btn" data-tab="apps" role="tab">Apps</button>
+            <button class="tab-btn" data-tab="web" role="tab">Webs</button>
+            <button class="tab-btn" data-tab="system" role="tab">Systems</button>
+            <button class="tab-btn" data-tab="gamedev" role="tab">GameDev</button>
+          </div>
+
+          <div class="tab-contents">
+            <!-- Latest -->
+            <div data-content="latest" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <article class="p-4 rounded-lg bg-white shadow">
+                <h3 class="font-semibold">Portfolio redesign</h3>
+                <p class="text-sm text-text2 mt-1">A modern, responsive portfolio built with Tailwind and vanilla JS.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2">
+                    <span class="project-badge badge-finished">Web</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <a href="#" class="text-sm text-primary">View</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-4 rounded-lg bg-white shadow">
+                <h3 class="font-semibold">ToDo Mobile App</h3>
+                <p class="text-sm text-text2 mt-1">A small cross-platform app built with Capacitor and React.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-ongoing">App</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <article class="p-4 rounded-lg bg-white shadow extra latest-extra hidden">
+                <h3 class="font-semibold">Chatbot System</h3>
+                <p class="text-sm text-text2 mt-1">Prototype of a conversational agent for support automation.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-ongoing">AI</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-2">
+                <button class="tab-show-more text-sm text-text2" data-target="latest">Show more</button>
+              </div>
+            </div>
+
+            <!-- Apps -->
+            <div data-content="apps" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <article class="p-4 rounded-lg bg-white shadow">
+                <h3 class="font-semibold">Expense Tracker</h3>
+                <p class="text-sm text-text2 mt-1">React Native app to track personal expenses.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-finished">App</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <article class="p-4 rounded-lg bg-white shadow extra apps-extra hidden">
+                <h3 class="font-semibold">Notes Sync</h3>
+                <p class="text-sm text-text2 mt-1">Cross-device notes sync using IndexedDB and cloud sync.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-ongoing">App</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-2">
+                <button class="tab-show-more text-sm text-text2" data-target="apps">Show more</button>
+              </div>
+            </div>
+
+            <!-- Webs -->
+            <div data-content="web" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <article class="p-4 rounded-lg bg-white shadow">
+                <h3 class="font-semibold">E-commerce UI</h3>
+                <p class="text-sm text-text2 mt-1">Frontend for an online store with product filters and carts.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-finished">Web</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-2">
+                <button class="tab-show-more text-sm text-text2" data-target="web">Show more</button>
+              </div>
+            </div>
+
+            <!-- Systems -->
+            <div data-content="system" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <article class="p-4 rounded-lg bg-white shadow">
+                <h3 class="font-semibold">Inventory System</h3>
+                <p class="text-sm text-text2 mt-1">PHP/MySQL system for small business inventory management.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-finished">System</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-2">
+                <button class="tab-show-more text-sm text-text2" data-target="system">Show more</button>
+              </div>
+            </div>
+
+            <!-- GameDev -->
+            <div data-content="gamedev" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <article class="p-4 rounded-lg bg-white shadow">
+                <h3 class="font-semibold">2D Platformer</h3>
+                <p class="text-sm text-text2 mt-1">Small platformer demo made in Godot.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex gap-2"><span class="project-badge badge-ongoing">GameDev</span></div>
+                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-2">
+                <button class="tab-show-more text-sm text-text2" data-target="gamedev">Show more</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-content mb-12">
+          <h2 class="text-2xl font-semibold mb-6">Core Skills</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div class="p-4 rounded-lg bg-hover">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <i class="ph ph-code text-xl"></i>
+                </div>
+                <h3 class="font-medium">Frontend</h3>
+              </div>
+              <div class="text-sm text-text2 space-y-1">
+                <p>HTML &amp; CSS</p>
+                <p>JavaScript (ES6+)</p>
+                <p>Responsive Design</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <i class="ph ph-server text-xl"></i>
+                </div>
+                <h3 class="font-medium">Backend</h3>
+              </div>
+              <div class="text-sm text-text2 space-y-1">
+                <p>Node.js</p>
+                <p>PHP</p>
+                <p>Python</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <i class="ph ph-database text-xl"></i>
+                </div>
+                <h3 class="font-medium">Databases</h3>
+              </div>
+              <div class="text-sm text-text2 space-y-1">
+                <p>MySQL</p>
+                <p>PostgreSQL</p>
+                <p>MongoDB</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <i class="ph ph-palette text-xl"></i>
+                </div>
+                <h3 class="font-medium">Design Tools</h3>
+              </div>
+              <div class="text-sm text-text2 space-y-1">
+                <p>Figma</p>
+                <p>Canva</p>
+                <p>UI component kits</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <i class="ph ph-game-controller text-xl"></i>
+                </div>
+                <h3 class="font-medium">Game Dev</h3>
+              </div>
+              <div class="text-sm text-text2 space-y-1">
+                <p>Unity (C#)</p>
+                <p>Pygame</p>
+                <p>Godot</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Eligibility Section -->
+        <section id="eligibility" class="section-content mb-12">
+          <h2 class="text-2xl font-semibold mb-6">Eligibility &amp; Achievements</h2>
+          <div class="space-y-4">
+            <div class="p-4 rounded-lg bg-hover">
+              <h3 class="font-medium">🏆 Best Capstone Project 2025</h3>
+              <p class="text-sm text-text2">AI-Powered Emotion-Based Music Recommendation System</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <h3 class="font-medium">📚 Dean's Lister</h3>
+              <p class="text-sm text-text2">3 consecutive semesters</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <h3 class="font-medium">💻 Active Developer</h3>
+              <p class="text-sm text-text2">50+ GitHub commits/month average</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="section-content mb-12">
+          <h2 class="text-2xl font-semibold mb-4">Games</h2>
+          <p class="text-text2 mb-4">Selected game development experiments and prototypes.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <article class="p-4 rounded-lg bg-white shadow">
+              <h3 class="font-semibold">2D Platformer</h3>
+              <p class="text-sm text-text2 mt-1">A fast-paced platformer demo built in Godot.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="project-badge badge-ongoing">GameDev</span>
+                <a href="#" class="text-sm text-primary">View</a>
+              </div>
+            </article>
+
+            <article class="p-4 rounded-lg bg-white shadow">
+              <h3 class="font-semibold">Puzzle Prototype</h3>
+              <p class="text-sm text-text2 mt-1">Grid-based puzzle with increasing difficulty.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="project-badge badge-finished">GameDev</span>
+                <a href="#" class="text-sm text-primary">View</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Web Apps Section -->
+        <section id="web-apps" class="section-content mb-12">
+          <h2 class="text-2xl font-semibold mb-4">Web Applications</h2>
+          <p class="text-text2 mb-4">Web applications and dashboards I have worked on.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <article class="p-4 rounded-lg bg-white shadow">
+              <h3 class="font-semibold">Portfolio Website</h3>
+              <p class="text-sm text-text2 mt-1">This portfolio, built with Tailwind CSS and vanilla JavaScript.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="project-badge badge-finished">Web</span>
+                <a href="#" class="text-sm text-primary">View</a>
+              </div>
+            </article>
+
+            <article class="p-4 rounded-lg bg-white shadow">
+              <h3 class="font-semibold">Admin Dashboard</h3>
+              <p class="text-sm text-text2 mt-1">A responsive dashboard layout for analytics data.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="project-badge badge-ongoing">Web</span>
+                <a href="#" class="text-sm text-primary">View</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- AI Projects Section -->
+        <section id="ai-projects" class="section-content mb-12">
+          <h2 class="text-2xl font-semibold mb-4">AI Projects</h2>
+          <p class="text-text2 mb-4">Experiments with machine learning and conversational agents.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <article class="p-4 rounded-lg bg-white shadow">
+              <h3 class="font-semibold">Emotion-Based Music Recommender</h3>
+              <p class="text-sm text-text2 mt-1">Recommends songs based on detected user emotion.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="project-badge badge-finished">AI</span>
+                <a href="#" class="text-sm text-primary">View</a>
+              </div>
+            </article>
+
+            <article class="p-4 rounded-lg bg-white shadow">
+              <h3 class="font-semibold">Support Chatbot</h3>
+              <p class="text-sm text-text2 mt-1">Prototype conversational agent for customer support.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="project-badge badge-ongoing">AI</span>
+                <a href="#" class="text-sm text-primary">View</a>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
     </main>
   </div>

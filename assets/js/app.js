@@ -1,5 +1,5 @@
 // app.js
-// Bootstraps page behaviors and loads section pages dynamically.
+// Scroll-based SPA navigation with scroll spy
 
 function wireProjectsUI(root = document) {
   const tabs = root.querySelectorAll('.tab-btn');
@@ -35,24 +35,39 @@ function wireProjectsUI(root = document) {
   });
 }
 
-async function loadPage(page) {
-  const container = document.getElementById('main-content');
-  if (!container) return;
+function scrollToSection(sectionId, updateHash = true) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
 
-  container.innerHTML = '<p class="text-text2 py-4">Loading...</p>';
+  const headerHeight = 64; // h-16 = 4rem = 64px
+  const offset = section.offsetTop - headerHeight - 20; // 20px padding
 
-  try {
-    const res = await fetch('pages/' + page + '.html');
-    if (!res.ok) throw new Error('Failed to load: ' + page);
-    const html = await res.text();
-    container.innerHTML = html;
+  window.scrollTo({
+    top: offset,
+    behavior: 'smooth'
+  });
 
-    if (window.initBanner) window.initBanner();
-    if (window.initMetrics) window.initMetrics(container);
-    wireProjectsUI(container);
-  } catch (err) {
-    console.error(err);
-    container.innerHTML = '<p class="text-red-500 py-4">Failed to load this section.</p>';
+  if (updateHash && history && history.replaceState) {
+    history.replaceState(null, '', '#' + sectionId);
+  }
+
+  // Update active nav item
+  const navItems = document.querySelectorAll('#sidebar .nav-item[data-page]');
+  navItems.forEach((item) => {
+    if (item.dataset.page === sectionId) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  // Close mobile menu if open
+  if (window.innerWidth < 1024) {
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+    if (sidebar) sidebar.classList.add('-translate-x-full');
+    if (backdrop) backdrop.classList.add('hidden');
+    document.body.style.overflow = '';
   }
 }
 
@@ -61,22 +76,60 @@ function wireSidebarNav() {
   if (!items.length) return;
 
   items.forEach((item) => {
-    item.addEventListener('click', () => {
-      const page = item.dataset.page;
-      if (!page) return;
-
-      items.forEach((el) => el.classList.remove('active'));
-      item.classList.add('active');
-
-      loadPage(page);
-      if (window.innerWidth < 1024) {
-        document.body.classList.remove('collapsed');
-      }
-      if (history && history.replaceState) {
-        history.replaceState(null, '', '#' + page);
-      }
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const sectionId = item.dataset.page;
+      if (!sectionId) return;
+      scrollToSection(sectionId);
     });
   });
+}
+
+function initScrollSpy() {
+  const sections = document.querySelectorAll('.section-content');
+  const navItems = document.querySelectorAll('#sidebar .nav-item[data-page]');
+  const headerHeight = 64;
+
+  function updateActiveSection() {
+    let current = '';
+    const scrollPos = window.scrollY + headerHeight + 100;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.id;
+      }
+    });
+
+    if (current) {
+      navItems.forEach((item) => {
+        if (item.dataset.page === current) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      if (history && history.replaceState) {
+        history.replaceState(null, '', '#' + current);
+      }
+    }
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveSection();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Initial check
+  updateActiveSection();
 }
 
 function wireSearchModal() {
@@ -100,14 +153,15 @@ function wireSearchModal() {
     'Portfolio'
   ];
 
-  const pageMap = {
+  const sectionMap = {
     about: 'about',
     projects: 'projects',
     skills: 'skills',
     eligibility: 'eligibility',
     games: 'games',
     'web apps': 'web-apps',
-    'ai projects': 'ai-projects'
+    'ai projects': 'ai-projects',
+    contact: 'contact'
   };
 
   function openModal() {
@@ -123,17 +177,28 @@ function wireSearchModal() {
   }
 
   function handleSelect(term) {
-    input.value = term;
     const key = term.toLowerCase();
-    const page = pageMap[key];
-    if (page) {
-      const targetItem = document.querySelector('#sidebar .nav-item[data-page="' + page + '"]');
-      document.querySelectorAll('#sidebar .nav-item[data-page]').forEach((el) => {
-        el.classList.toggle('active', el === targetItem);
-      });
-      loadPage(page);
+    let sectionId = sectionMap[key];
+    
+    // Handle special cases
+    if (key === 'contact') {
+      sectionId = 'about'; // Contact is within about section
+    } else if (!sectionId) {
+      // Try to find by partial match
+      for (const [keyword, id] of Object.entries(sectionMap)) {
+        if (key.includes(keyword) || keyword.includes(key)) {
+          sectionId = id;
+          break;
+        }
+      }
     }
-    closeModal();
+
+    if (sectionId) {
+      closeModal();
+      setTimeout(() => scrollToSection(sectionId), 100);
+    } else {
+      closeModal();
+    }
   }
 
   if (suggestionsEl && !suggestionsEl.dataset.bound) {
@@ -162,6 +227,13 @@ function wireSearchModal() {
     if (input.value.trim()) handleSelect(input.value.trim());
   });
 
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      e.preventDefault();
+      handleSelect(input.value.trim());
+    }
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
   });
@@ -169,21 +241,20 @@ function wireSearchModal() {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.initToggle) window.initToggle();
+  if (window.initBanner) window.initBanner();
+  if (window.initMetrics) window.initMetrics();
 
   wireSidebarNav();
   wireSearchModal();
+  wireProjectsUI();
+  initScrollSpy();
 
+  // Handle initial hash
   const hash = window.location.hash.replace('#', '');
-  const initialPage = hash || 'about';
-
-  const targetItem = document.querySelector(
-    '#sidebar .nav-item[data-page="' + initialPage + '"]'
-  );
-  document.querySelectorAll('#sidebar .nav-item[data-page]').forEach((el) => {
-    el.classList.toggle('active', el === targetItem);
-  });
-
-  loadPage(initialPage);
+  if (hash) {
+    setTimeout(() => scrollToSection(hash, false), 100);
+  } else {
+    // Default to about section
+    setTimeout(() => scrollToSection('about', false), 100);
+  }
 });
-
-
