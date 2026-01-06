@@ -1,0 +1,127 @@
+<!-- Projects Page -->
+<section id="projects" class="mb-12">
+  <h2 class="text-2xl font-semibold mb-4">Latest Works</h2>
+
+  <div class="tabs mb-4" role="tablist" aria-label="Project categories">
+    <button class="tab-btn active" data-tab="latest" role="tab" aria-selected="true">Latest</button>
+    <button class="tab-btn" data-tab="apps" role="tab">Apps</button>
+    <button class="tab-btn" data-tab="web" role="tab">Webs</button>
+    <button class="tab-btn" data-tab="system" role="tab">Systems</button>
+    <button class="tab-btn" data-tab="gamedev" role="tab">GameDev</button>
+  </div>
+
+  <div class="tab-contents">
+    <!-- Latest -->
+    <div data-content="latest" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="p-4 rounded-lg bg-white shadow">
+        <h3 class="font-semibold">Portfolio redesign</h3>
+        <p class="text-sm text-text2 mt-1">A modern, responsive portfolio built with Tailwind and vanilla JS.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="project-badge badge-finished">Web</span>
+          </div>
+          <div class="flex gap-2">
+            <a href="#" class="text-sm text-primary">View</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="p-4 rounded-lg bg-white shadow">
+        <h3 class="font-semibold">ToDo Mobile App</h3>
+        <p class="text-sm text-text2 mt-1">A small cross-platform app built with Capacitor and React.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-ongoing">App</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <article class="p-4 rounded-lg bg-white shadow extra latest-extra hidden">
+        <h3 class="font-semibold">Chatbot System</h3>
+        <p class="text-sm text-text2 mt-1">Prototype of a conversational agent for support automation.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-ongoing">AI</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <div class="col-span-full flex justify-center mt-2">
+        <button class="tab-show-more text-sm text-text2" data-target="latest">Show more</button>
+      </div>
+    </div>
+
+    <!-- Apps -->
+    <div data-content="apps" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="p-4 rounded-lg bg-white shadow">
+        <h3 class="font-semibold">Expense Tracker</h3>
+        <p class="text-sm text-text2 mt-1">React Native app to track personal expenses.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-finished">App</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <article class="p-4 rounded-lg bg-white shadow extra apps-extra hidden">
+        <h3 class="font-semibold">Notes Sync</h3>
+        <p class="text-sm text-text2 mt-1">Cross-device notes sync using IndexedDB and cloud sync.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-ongoing">App</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <div class="col-span-full flex justify-center mt-2">
+        <button class="tab-show-more text-sm text-text2" data-target="apps">Show more</button>
+      </div>
+    </div>
+
+    <!-- Webs -->
+    <div data-content="web" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="p-4 rounded-lg bg-white shadow">
+        <h3 class="font-semibold">E-commerce UI</h3>
+        <p class="text-sm text-text2 mt-1">Frontend for an online store with product filters and carts.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-finished">Web</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <div class="col-span-full flex justify-center mt-2">
+        <button class="tab-show-more text-sm text-text2" data-target="web">Show more</button>
+      </div>
+    </div>
+
+    <!-- Systems -->
+    <div data-content="system" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="p-4 rounded-lg bg-white shadow">
+        <h3 class="font-semibold">Inventory System</h3>
+        <p class="text-sm text-text2 mt-1">PHP/MySQL system for small business inventory management.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-finished">System</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <div class="col-span-full flex justify-center mt-2">
+        <button class="tab-show-more text-sm text-text2" data-target="system">Show more</button>
+      </div>
+    </div>
+
+    <!-- GameDev -->
+    <div data-content="gamedev" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="p-4 rounded-lg bg-white shadow">
+        <h3 class="font-semibold">2D Platformer</h3>
+        <p class="text-sm text-text2 mt-1">Small platformer demo made in Godot.</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="flex gap-2"><span class="project-badge badge-ongoing">GameDev</span></div>
+          <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
+        </div>
+      </article>
+
+      <div class="col-span-full flex justify-center mt-2">
+        <button class="tab-show-more text-sm text-text2" data-target="gamedev">Show more</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+

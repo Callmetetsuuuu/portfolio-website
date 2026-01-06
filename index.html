@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#FAFAF9] text-text">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Luna — Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#4F46E5',
+              hover: '#4338CA'
+            },
+            surface: '#F8FAFC',
+            border: '#E2E8F0',
+            hover: '#EEF2FF',
+            text: '#0F172A',
+            text2: '#475569'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="font-sans">
+
+  <!-- BACKDROP -->
+  <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+
+  <!-- HEADER -->
+  <header
+    class="fixed top-0 left-0 right-0 h-16 bg-surface border-b border-border flex items-center px-3 z-50 header-shell">
+    <div class="flex items-center gap-3 min-w-0">
+      <button id="menuToggle" class="py-2 px-3 ml-2 rounded-lg hover:bg-hover border rounded-lg">
+        <i class="ph ph-list text-xl"></i>
+      </button>
+      <a href="#" class="flex items-center gap-2 min-w-0">
+        <div class="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center font-medium">JL</div>
+        <div class="flex flex-col -gap-0.5 header-title">
+          <span class="font-semibold text-sm truncate">Juan Luna</span>
+          <span class="text-xs text-text2 truncate">Developer</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex-1 flex justify-center header-search">
+      <!-- Search Bar -->
+      <div class="max-w-[600px] w-full hidden md:flex items-center px-4">
+        <div class="flex-1 flex items-center gap-2">
+          <div class="relative flex-1 flex items-center">
+            <input type="search" placeholder="Search my projects..."
+              class="w-full h-10 pl-4 pr-12 rounded-l-full bg-hover/50 border border-border focus:border-primary focus:bg-surface outline-none text-sm" />
+            <button data-search-trigger
+              class="absolute right-0 h-10 px-6 flex items-center justify-center text-text2 hover:text-text"
+              aria-label="Search">
+              <i class="ph ph-magnifying-glass text-lg"></i>
+            </button>
+          </div>
+          <button
+            class="h-10 px-6 rounded-r-full border border-l-0 border-border hover:bg-hover flex items-center justify-center text-text2 hover:text-text">
+            <i class="ph ph-microphone text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 header-actions">
+      <!-- Mobile search icon -->
+      <button data-search-trigger class="p-2 rounded-lg hover:bg-hover md:hidden" aria-label="Search">
+        <i class="ph ph-magnifying-glass text-xl"></i>
+      </button>
+      <a href="https://github.com/johnleonard03" target="_blank" class="p-2 rounded-lg hover:bg-hover" title="GitHub">
+        <i class="ph ph-github-logo text-xl"></i>
+      </a>
+      <a href="#" class="cta-button ghost flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm"
+        aria-label="Download resume">
+        <i class="ph ph-download"></i>
+        <span class="cta-label">Resume</span>
+      </a>
+      <a href="mailto:johnleonard.libanan@gmail.com"
+        class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-medium text-sm">
+        <i class="ph ph-envelope"></i>
+        <span class="cta-label">Contact</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="flex pt-16 min-h-screen">
+    <!-- SIDEBAR -->
+    <aside id="sidebar"
+      class="fixed top-16 left-0 h-[calc(100vh-4rem)] bg-surface border-r border-border py-3 z-40 transform -translate-x-full lg:translate-x-0 overflow-y-auto transition-transform duration-75">
+      <nav class="space-y-1">
+        <div class="nav-item active" title="About" data-page="about">
+          <div class="icon-wrapper">
+            <i class="ph ph-user"></i>
+            <span class="mini-label">About me</span>
+          </div>
+          <span class="label">About me</span>
+        </div>
+        <div class="nav-item" title="Projects" data-page="projects">
+          <div class="icon-wrapper">
+            <i class="ph ph-squares-four"></i>
+            <span class="mini-label">Projects</span>
+          </div>
+          <span class="label">Projects</span>
+        </div>
+        <div class="nav-item" title="Skills" data-page="skills">
+          <div class="icon-wrapper">
+            <i class="ph ph-code"></i>
+            <span class="mini-label">Skills</span>
+          </div>
+          <span class="label">Skills</span>
+        </div>
+        <div class="nav-item" title="Eligibility" data-page="eligibility">
+          <div class="icon-wrapper">
+            <i class="ph ph-trophy"></i>
+            <span class="mini-label">Eligibility</span>
+          </div>
+          <span class="label">Eligibility</span>
+        </div>
+      </nav>
+
+      <!-- <hr class="my-2 border-border"> -->
+
+      <nav class="space-y-1">
+        <div class="nav-item" title="Games" data-page="games">
+          <div class="icon-wrapper">
+            <i class="ph ph-game-controller"></i>
+            <span class="mini-label">Games</span>
+          </div>
+          <span class="label">Games</span>
+        </div>
+        <div class="nav-item" title="Web Apps" data-page="web-apps">
+          <div class="icon-wrapper">
+            <i class="ph ph-browser"></i>
+            <span class="mini-label">Web Apps</span>
+          </div>
+          <span class="label">Web Apps</span>
+        </div>
+        <div class="nav-item" title="AI Projects" data-page="ai-projects">
+          <div class="icon-wrapper">
+            <i class="ph ph-robot"></i>
+            <span class="mini-label">AI Projects</span>
+          </div>
+          <span class="label">AI Projects</span>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main
+      class="flex-1 p-6 bg-surface overflow-y-auto page-main lg:ml-[240px] transition-[margin] duration-150 ease-in-out">
+      <div class="w-full" id="main-content">
+        <!-- Page content will be loaded here dynamically -->
+      </div>
+    </main>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div id="searchModal" class="fixed inset-0 z-[70] hidden items-center justify-center">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-search-close></div>
+    <div class="relative z-[80] w-full max-w-xl mx-4 bg-white rounded-2xl shadow-2xl border border-border p-5">
+      <div class="flex items-start gap-3">
+        <div class="mt-1">
+          <i class="ph ph-magnifying-glass text-xl text-text2"></i>
+        </div>
+        <div class="flex-1">
+          <div class="flex justify-between items-center gap-2 mb-2">
+            <h2 class="text-lg font-semibold text-text">Search</h2>
+            <button class="p-2 rounded-lg hover:bg-hover text-text2" data-search-close aria-label="Close search">
+              <i class="ph ph-x text-lg"></i>
+            </button>
+          </div>
+          <div class="flex items-center gap-2 mb-3">
+            <input id="searchModalInput" type="search" placeholder="Type a keyword..."
+              class="flex-1 h-11 px-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" />
+            <button id="searchModalSubmit"
+              class="h-11 px-4 rounded-lg bg-primary hover:bg-primary-hover text-white text-sm font-medium">Search</button>
+          </div>
+          <div class="flex flex-wrap gap-2" id="searchSuggestions">
+            <!-- suggestions injected -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="w-full border-t border-border bg-surface/80 backdrop-blur-sm">
+    <div
+      class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs md:text-sm text-text2">
+      <div class="flex items-center gap-1">
+        <span>&copy; <span id="footer-year"></span> Juan Luna.</span>
+        <span class="hidden sm:inline">All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline">Built with calm UI.</span>
+        <a href="mailto:johnleonard.libanan@gmail.com" class="underline-offset-2 hover:underline">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Toggle or Navar functonality -->
+  <script src="assets/js/toggle.js"></script>
+  <!-- Banner and modal functionality -->
+  <script src="assets/js/banner.js"></script>
+  <script src="assets/js/count.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    // footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

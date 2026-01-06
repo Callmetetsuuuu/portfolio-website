@@ -1,0 +1,350 @@
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --surface: #f8fafc;
+  --border: #e2e8f0;
+  --hover: #eef2ff;
+  --text: #0f172a;
+  --text2: #475569;
+  --nav-hover: #1f2937;
+}
+
+#sidebar {
+  width: 240px;
+  overflow: hidden;
+  margin-top: 0;
+  transition: width 75ms ease-out, padding 75ms ease-out;
+  will-change: transform, width, padding;
+}
+
+body.collapsed #sidebar {
+  width: 84px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+#sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+  padding-top: 0;
+}
+
+#sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#sidebar .icon-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+#sidebar .label {
+  margin-left: 12px;
+  transition: opacity 0.2s ease, width 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+#sidebar .mini-label {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  width: max-content;
+  text-align: center;
+  pointer-events: none;
+
+}
+
+#sidebar .nav-item:hover {
+  background-color: var(--nav-hover);
+  color: #e2e8f0;
+}
+
+#sidebar .nav-item.active {
+  color: var(--primary);
+}
+
+#sidebar .nav-item i {
+  font-size: 20px;
+}
+
+body.collapsed #sidebar nav {
+  align-items: flex-start;
+}
+
+body.collapsed #sidebar .nav-item {
+  padding: 12px 16px !important;
+  padding-bottom: 20px !important;
+  justify-content: flex-start;
+  margin-left: 0;
+}
+
+body.collapsed #sidebar .label {
+  width: 0;
+  opacity: 0;
+  margin-left: 0;
+}
+
+body.collapsed #sidebar .mini-label {
+  opacity: 0.7;
+}
+
+body.collapsed #sidebar .nav-item:hover .mini-label {
+  opacity: 1;
+}
+
+body.collapsed #sidebar .nav-item.active .label {
+  opacity: 1;
+}
+
+body.collapsed #sidebar hr {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border: 4px solid #0f172a;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d3748;
+}
+
+.metric-btn {
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+  user-select: none;
+}
+
+.metric-btn:active {
+  transform: scale(.98);
+}
+
+.metric-active {
+  color: var(--primary);
+}
+
+.metric-pulse {
+  animation: metricPulse .6s ease;
+}
+
+.metric-btn i {
+  transition: transform 200ms ease, color 200ms ease, opacity 150ms ease;
+  display: inline-block;
+}
+
+.metric-btn:hover {
+  background-color: rgba(79, 70, 229, 0.06);
+}
+
+.metric-btn:hover i {
+  transform: translateY(-2px) scale(1.06);
+  color: var(--primary);
+}
+
+@keyframes metricPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: var(--text);
+  font-size: 12px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.chip i {
+  opacity: 0.85;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .4rem .65rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 0 rgba(16, 24, 24, 0.03);
+}
+
+.cta-button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.cta-button.ghost {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--text);
+}
+
+.metric-container {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 249, 248, 0.9));
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.metric-btn:focus {
+  outline: 3px solid rgba(79, 70, 229, 0.18);
+  outline-offset: 2px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tab-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  background: #fff;
+  border-color: rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 0 rgba(16, 24, 24, 0.03);
+  color: var(--primary);
+}
+
+.project-badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.badge-finished {
+  background: rgba(79, 70, 229, 0.12);
+  color: #312e81;
+}
+
+.badge-ongoing {
+  background: rgba(245, 208, 108, 0.12);
+  color: #92400e;
+}
+
+.notify-btn {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: #fff;
+  cursor: pointer;
+}
+
+.notify-btn.subscribed {
+  background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+  color: white;
+  border-color: transparent;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #111827;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: none;
+  z-index: 80;
+}
+
+.share-feedback {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 8px);
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--primary);
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(16, 24, 24, 0.06);
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 60;
+  display: block;
+}
+
+.share-feedback.hidden {
+  display: none;
+}
+
+/* Header responsiveness tweaks */
+.header-shell {
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .header-shell {
+    padding-inline: 0.5rem;
+  }
+
+  .header-title {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.25rem;
+  }
+
+  .header-actions .cta-label {
+    display: none;
+  }
+
+  .header-actions a,
+  .header-actions button {
+    padding-inline: 0.4rem;
+  }
+}
