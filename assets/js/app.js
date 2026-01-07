@@ -264,7 +264,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Place all gallery images for each project in their respective folders
 const projectGalleries = {
   'wod': {
-    title: 'World of Dungeon - Gallery',
+    title: 'World of Dungeon',
+    subtitle: 'Unity • RPG Project',
+    type: 'Game',
+    status: 'ongoing',
+    description: 'An RPG project for our software development track featuring dungeon exploration, character progression, and engaging gameplay mechanics.',
+    strengths: 'Has executable file and working game mechanics',
+    needsImprovement: 'Game mechanics and logic need adjustments',
+    thumbnail: 'assets/images/WOD.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/wod/image1.jpg',
@@ -273,7 +280,14 @@ const projectGalleries = {
     ]
   },
   'typing-warriors': {
-    title: 'Typing Warriors - Gallery',
+    title: 'Typing Warriors',
+    subtitle: 'Pygame • Educational Game',
+    type: 'Game',
+    status: 'ongoing',
+    description: 'An educational game project for software development track that combines typing skills with engaging gameplay.',
+    strengths: 'Almost complete and fully working',
+    needsImprovement: 'Character game selection layout design needs adjustment',
+    thumbnail: 'assets/images/PW.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/typing-warriors/image1.jpg',
@@ -281,7 +295,14 @@ const projectGalleries = {
     ]
   },
   'essu-igp': {
-    title: 'ESSU IGP - Gallery',
+    title: 'ESSU IGP',
+    subtitle: 'School E-commerce Website',
+    type: 'Web/App',
+    status: 'finished',
+    description: 'A comprehensive school e-commerce website with full database integration and admin control panel.',
+    strengths: 'Working fully with database and admin control',
+    needsImprovement: 'Backend frameworks and API need to use Laravel for better code organization and file structure',
+    thumbnail: 'assets/images/IGP.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/essu-igp/image1.jpg',
@@ -289,7 +310,14 @@ const projectGalleries = {
     ]
   },
   'lakwatsa': {
-    title: 'Lakwatsa - Gallery',
+    title: 'Lakwatsa',
+    subtitle: 'Booking Website',
+    type: 'Web/App',
+    status: 'finished',
+    description: 'A booking website platform for travel and accommodation reservations with database integration.',
+    strengths: 'Working well with database',
+    needsImprovement: 'Backend frameworks and API need to use Laravel for better code organization and file structure',
+    thumbnail: 'assets/images/Lak.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/lakwatsa/image1.jpg',
@@ -297,7 +325,14 @@ const projectGalleries = {
     ]
   },
   'essu-digital-archive': {
-    title: 'ESSU Digital Archive - Gallery',
+    title: 'ESSU Digital Archive',
+    subtitle: 'School Digital Archive System',
+    type: 'Web/App',
+    status: 'finished',
+    description: 'A software storage system for the school where students/instructors can deposit their work like thesis/projects and manage softcopy papers.',
+    strengths: 'Working fully with database and admin control',
+    needsImprovement: 'Backend frameworks and API need to use Laravel for better code organization and file structure',
+    thumbnail: 'assets/images/EDA.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/essu-digital-archive/image1.jpg',
@@ -305,7 +340,13 @@ const projectGalleries = {
     ]
   },
   'portfolio': {
-    title: 'Personal Portfolio - Gallery',
+    title: 'Personal Portfolio',
+    subtitle: 'Portfolio Website',
+    type: 'Web/App',
+    status: 'finished',
+    description: 'A responsive portfolio website showcasing projects, skills, and achievements with smooth navigation and modern design.',
+    statusNote: 'Finished but needs to be updated yearly (monthly or whenever new credentials are added)',
+    thumbnail: 'assets/images/banner.jpg',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/portfolio/image1.jpg',
@@ -313,7 +354,13 @@ const projectGalleries = {
     ]
   },
   'midman-ai': {
-    title: 'Midman AI - Gallery',
+    title: 'Midman AI',
+    subtitle: 'AI Middle Man • Trading Platform',
+    type: 'AI Dev',
+    status: 'ongoing',
+    description: 'An AI-powered trading platform that acts as a middleman between buyers and sellers, processing conditions and data automatically instead of hiring a human middleman.',
+    statusNote: 'Ongoing - Currently working on frontend. Design completed on Figma, starting code implementation using React/TypeScript',
+    thumbnail: 'assets/images/Mid.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/midman-ai/image1.jpg',
@@ -321,7 +368,13 @@ const projectGalleries = {
     ]
   },
   'woogle': {
-    title: 'Woogle Search Engine - Gallery',
+    title: 'Woogle',
+    subtitle: 'Search Engine • AI Challenge',
+    type: 'AI Dev',
+    status: 'ongoing',
+    description: 'A search engine project built as a challenge with an in-game friend. Features working search functionality with a dataset of around 1 million news articles (2011-2021).',
+    statusNote: 'Not finished - Built as a challenge project but working with datasets of around 1 million news articles (2011-2021)',
+    thumbnail: 'assets/images/woogle.png',
     images: [
       // Add your gallery images here, e.g.:
       // 'assets/images/projects/woogle/image1.jpg',
@@ -339,11 +392,67 @@ function openProjectGallery(projectId) {
 
   const modal = document.getElementById('projectGalleryModal');
   const title = document.getElementById('galleryTitle');
+  const projectInfo = document.getElementById('projectInfo');
   const content = document.getElementById('galleryContent');
 
-  if (!modal || !title || !content) return;
+  if (!modal || !title || !projectInfo || !content) return;
 
   title.textContent = gallery.title;
+  
+  // Build project information HTML
+  const badgeClass = gallery.status === 'finished' ? 'badge-finished' : 'badge-ongoing';
+  let infoHTML = `
+    <div class="bg-hover rounded-xl p-6 border border-border">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex-shrink-0">
+          <img src="${gallery.thumbnail}" alt="${gallery.title}" class="w-full md:w-64 h-48 object-cover rounded-lg" />
+        </div>
+        <div class="flex-1">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <h3 class="text-2xl font-bold mb-1">${gallery.title}</h3>
+              <p class="text-sm text-text2">${gallery.subtitle}</p>
+            </div>
+            <span class="project-badge ${badgeClass}">${gallery.type}</span>
+          </div>
+          <p class="text-sm text-text2 mb-4 leading-relaxed">${gallery.description}</p>
+  `;
+
+  if (gallery.statusNote) {
+    infoHTML += `
+          <div class="mb-4">
+            <span class="font-semibold text-blue-600 text-sm">📊 Status:</span>
+            <p class="text-sm text-text2 mt-1">${gallery.statusNote}</p>
+          </div>
+    `;
+  } else if (gallery.strengths || gallery.needsImprovement) {
+    infoHTML += '<div class="space-y-3 text-sm">';
+    if (gallery.strengths) {
+      infoHTML += `
+        <div>
+          <span class="font-semibold text-green-600">✓ Strengths:</span>
+          <p class="text-text2 mt-1">${gallery.strengths}</p>
+        </div>
+      `;
+    }
+    if (gallery.needsImprovement) {
+      infoHTML += `
+        <div>
+          <span class="font-semibold text-orange-600">⚠ Needs Improvement:</span>
+          <p class="text-text2 mt-1">${gallery.needsImprovement}</p>
+        </div>
+      `;
+    }
+    infoHTML += '</div>';
+  }
+
+  infoHTML += `
+        </div>
+      </div>
+    </div>
+  `;
+
+  projectInfo.innerHTML = infoHTML;
   
   // Only display images if they exist
   if (gallery.images && gallery.images.length > 0) {
