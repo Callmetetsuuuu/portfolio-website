@@ -258,3 +258,124 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => scrollToSection('about', false), 100);
   }
 });
+
+// Project Gallery functionality
+// Each project has its own folder: assets/images/projects/{project-id}/
+// Place all gallery images for each project in their respective folders
+const projectGalleries = {
+  'wod': {
+    title: 'World of Dungeon - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/wod/image1.jpg',
+      // 'assets/images/projects/wod/image2.jpg',
+      // 'assets/images/projects/wod/image3.jpg'
+    ]
+  },
+  'typing-warriors': {
+    title: 'Typing Warriors - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/typing-warriors/image1.jpg',
+      // 'assets/images/projects/typing-warriors/image2.jpg'
+    ]
+  },
+  'essu-igp': {
+    title: 'ESSU IGP - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/essu-igp/image1.jpg',
+      // 'assets/images/projects/essu-igp/image2.jpg'
+    ]
+  },
+  'lakwatsa': {
+    title: 'Lakwatsa - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/lakwatsa/image1.jpg',
+      // 'assets/images/projects/lakwatsa/image2.jpg'
+    ]
+  },
+  'essu-digital-archive': {
+    title: 'ESSU Digital Archive - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/essu-digital-archive/image1.jpg',
+      // 'assets/images/projects/essu-digital-archive/image2.jpg'
+    ]
+  },
+  'portfolio': {
+    title: 'Personal Portfolio - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/portfolio/image1.jpg',
+      // 'assets/images/projects/portfolio/image2.jpg'
+    ]
+  },
+  'midman-ai': {
+    title: 'Midman AI - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/midman-ai/image1.jpg',
+      // 'assets/images/projects/midman-ai/image2.jpg'
+    ]
+  },
+  'woogle': {
+    title: 'Woogle Search Engine - Gallery',
+    images: [
+      // Add your gallery images here, e.g.:
+      // 'assets/images/projects/woogle/image1.jpg',
+      // 'assets/images/projects/woogle/image2.jpg'
+    ]
+  }
+};
+
+function openProjectGallery(projectId) {
+  const gallery = projectGalleries[projectId];
+  if (!gallery) {
+    console.warn(`Gallery not found for project: ${projectId}`);
+    return;
+  }
+
+  const modal = document.getElementById('projectGalleryModal');
+  const title = document.getElementById('galleryTitle');
+  const content = document.getElementById('galleryContent');
+
+  if (!modal || !title || !content) return;
+
+  title.textContent = gallery.title;
+  
+  // Only display images if they exist
+  if (gallery.images && gallery.images.length > 0) {
+    content.innerHTML = gallery.images.map((img, idx) => `
+      <div class="aspect-video rounded-lg overflow-hidden cursor-pointer group" onclick="showImageModal('${img}')">
+        <img src="${img}" alt="Gallery image ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+      </div>
+    `).join('');
+  } else {
+    content.innerHTML = `
+      <div class="col-span-full text-center py-12 text-text2">
+        <i class="ph ph-images text-4xl mb-3 opacity-50"></i>
+        <p>No gallery images available yet.</p>
+        <p class="text-xs mt-2">Add images to <code class="bg-hover px-2 py-1 rounded">assets/images/projects/${projectId}/</code></p>
+      </div>
+    `;
+  }
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectGallery() {
+  const modal = document.getElementById('projectGalleryModal');
+  if (!modal) return;
+
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+// Make functions globally available
+window.openProjectGallery = openProjectGallery;
+window.closeProjectGallery = closeProjectGallery;
