@@ -318,143 +318,102 @@
           </div>
         </section>
 
-        <!-- Expertise Section (formerly Skills) -->
+        <!-- Expertise Section (redesigned) -->
         <section id="expertise" class="section-content mb-12">
-          <div class="mb-6">
+          <div class="mb-4">
             <h2 class="text-3xl font-bold mb-2">Expertise</h2>
-            <p class="text-text2">Technical expertise across frontend, backend, databases, design tools, and game
-              development.</p>
+            <p class="text-text2">Organized skills across frontend, backend, databases, tooling, and version control.</p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-            <div class="p-4 rounded-lg bg-hover">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <i class="ph ph-code text-xl"></i>
-                </div>
-                <h3 class="font-medium">Frontend</h3>
-              </div>
-              <div class="text-sm text-text2 space-y-2">
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/prof.png" alt="HTML & CSS" class="w-5 h-5 rounded object-cover" />
-                  <p>HTML &amp; CSS</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/img.png" alt="JavaScript" class="w-5 h-5 rounded object-cover" />
-                  <p>JavaScript (ES6+)</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/banner.jpg" alt="Tailwind" class="w-5 h-5 rounded object-cover" />
-                  <p>Tailwind</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/prof.png" alt="Bootstrap 5" class="w-5 h-5 rounded object-cover" />
-                  <p>Bootstrap 5</p>
+          <div class="expert-grid">
+            <article class="expert-card">
+              <div class="expert-header">
+                <div class="expert-icon"><i class="ph ph-code"></i></div>
+                <div>
+                  <h3 class="text-base font-semibold">Frontend</h3>
+                  <div class="text-xs text-text2">UI, responsive layouts, accessibility</div>
                 </div>
               </div>
-            </div>
+              <div class="skill-list mt-2">
+                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> HTML &amp; CSS</span>
+                <span class="skill-badge"><img src="assets/images/img.png" alt=""> JavaScript (ES6+)</span>
+                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> Tailwind</span>
+                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> Bootstrap</span>
+              </div>
+            </article>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <i class="ph ph-server text-xl"></i>
-                </div>
-                <h3 class="font-medium">Backend</h3>
-              </div>
-              <div class="text-sm text-text2 space-y-2">
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/img.png" alt="Node.js" class="w-5 h-5 rounded object-cover" />
-                  <p>Node.js</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/banner.jpg" alt="PHP" class="w-5 h-5 rounded object-cover" />
-                  <p>PHP</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/prof.png" alt="Python" class="w-5 h-5 rounded object-cover" />
-                  <p>Python</p>
+            <article class="expert-card">
+              <div class="expert-header">
+                <div class="expert-icon"><i class="ph ph-server"></i></div>
+                <div>
+                  <h3 class="text-base font-semibold">Backend</h3>
+                  <div class="text-xs text-text2">APIs, servers, and app logic</div>
                 </div>
               </div>
-            </div>
+              <div class="skill-list mt-2">
+                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Node.js</span>
+                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> PHP</span>
+                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> Python</span>
+              </div>
+            </article>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <i class="ph ph-database text-xl"></i>
-                </div>
-                <h3 class="font-medium">Databases</h3>
-              </div>
-              <div class="text-sm text-text2 space-y-2">
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/img.png" alt="MySQL" class="w-5 h-5 rounded object-cover" />
-                  <p>MySQL</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/banner.jpg" alt="PostgreSQL" class="w-5 h-5 rounded object-cover" />
-                  <p>PostgreSQL</p>
+            <article class="expert-card">
+              <div class="expert-header">
+                <div class="expert-icon"><i class="ph ph-database"></i></div>
+                <div>
+                  <h3 class="text-base font-semibold">Databases</h3>
+                  <div class="text-xs text-text2">Design and scaling</div>
                 </div>
               </div>
-            </div>
+              <div class="skill-list mt-2">
+                <span class="skill-badge"><img src="assets/images/img.png" alt=""> MySQL</span>
+                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> PostgreSQL</span>
+              </div>
+            </article>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <i class="ph ph-palette text-xl"></i>
-                </div>
-                <h3 class="font-medium">Design Tools</h3>
-              </div>
-              <div class="text-sm text-text2 space-y-2">
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/prof.png" alt="Figma" class="w-5 h-5 rounded object-cover" />
-                  <p>Figma</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/img.png" alt="Canva" class="w-5 h-5 rounded object-cover" />
-                  <p>Canva</p>
+            <article class="expert-card">
+              <div class="expert-header">
+                <div class="expert-icon"><i class="ph ph-palette"></i></div>
+                <div>
+                  <h3 class="text-base font-semibold">Design Tools</h3>
+                  <div class="text-xs text-text2">Prototyping & assets</div>
                 </div>
               </div>
-            </div>
+              <div class="skill-list mt-2">
+                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> Figma</span>
+                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Canva</span>
+              </div>
+            </article>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <i class="ph ph-game-controller text-xl"></i>
-                </div>
-                <h3 class="font-medium">Game Dev</h3>
-              </div>
-              <div class="text-sm text-text2 space-y-2">
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/banner.jpg" alt="Unity" class="w-5 h-5 rounded object-cover" />
-                  <p>Unity</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/prof.png" alt="Pygame" class="w-5 h-5 rounded object-cover" />
-                  <p>Pygame</p>
+            <article class="expert-card">
+              <div class="expert-header">
+                <div class="expert-icon"><i class="ph ph-terminal"></i></div>
+                <div>
+                  <h3 class="text-base font-semibold">Programming</h3>
+                  <div class="text-xs text-text2">Core languages</div>
                 </div>
               </div>
-            </div>
+              <div class="skill-list mt-2">
+                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Java</span>
+                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> C++</span>
+                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> JavaScript</span>
+              </div>
+            </article>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  <i class="ph ph-terminal text-xl"></i>
-                </div>
-                <h3 class="font-medium">Programming Languages</h3>
-              </div>
-              <div class="text-sm text-text2 space-y-2">
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/img.png" alt="Java" class="w-5 h-5 rounded object-cover" />
-                  <p>Java</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/banner.jpg" alt="C++" class="w-5 h-5 rounded object-cover" />
-                  <p>C++</p>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="assets/images/prof.png" alt="JavaScript" class="w-5 h-5 rounded object-cover" />
-                  <p>JavaScript</p>
+            <article class="expert-card">
+              <div class="expert-header">
+                <div class="expert-icon"><i class="ph ph-git-branch"></i></div>
+                <div>
+                  <h3 class="text-base font-semibold">Version Control</h3>
+                  <div class="text-xs text-text2">Git, GitHub, branching & workflows</div>
                 </div>
               </div>
-            </div>
+              <div class="skill-list mt-2">
+                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Git</span>
+                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> GitHub</span>
+                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> CI / Workflows</span>
+              </div>
+            </article>
+
           </div>
         </section>
 
@@ -522,20 +481,19 @@
           <!-- Achievement Cards -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             <div class="p-6 rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow">
-              <a href="https://www.facebook.com/share/p/1AHibVk1C6/" target="_blank" rel="noopener noreferrer"
-                class="flex items-start gap-4 no-underline">
-                <div
-                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                   <i class="ph ph-medal text-2xl"></i>
                 </div>
                 <div class="flex-1">
-                  <div class="aspect-[4/3] overflow-hidden mb-3 rounded">
+                  <div class="aspect-[4/3] overflow-hidden mb-3 rounded cursor-pointer" onclick="showImageModal('assets/images/Cert/Achiv.png')">
                     <img src="assets/images/Cert/Achiv.png" alt="Achievement" class="w-full h-full object-cover" />
                   </div>
                   <h3 class="text-lg font-semibold mb-1">Competition Achievement</h3>
-                  <p class="text-sm text-text2 leading-relaxed">View my competition achievement on Facebook.</p>
+                  <p class="text-sm text-text2 leading-relaxed mb-3">Click the image to view. Share/verify on Facebook.</p>
+                  <a href="https://www.facebook.com/share/p/1AHibVk1C6/" target="_blank" rel="noopener noreferrer" class="text-sm text-primary font-medium">View on Facebook</a>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </section>
@@ -1404,6 +1362,17 @@
   <script src="assets/js/banner.js"></script>
   <script src="assets/js/count.js"></script>
   <script src="assets/js/app.js"></script>
+  <!-- Floating downloads (resume, OpenCV) -->
+  <div id="floating-downloads" class="floating-downloads">
+    <a id="float-resume" href="Resume/resume.pdf" target="_blank" rel="noopener noreferrer" class="fd-btn fd-resume" title="Download Resume">
+      <i class="ph ph-download"></i>
+      <span>Resume</span>
+    </a>
+    <a id="float-opencv" href="OpenCv/" target="_blank" rel="noopener noreferrer" class="fd-btn fd-opencv" title="OpenCV resources">
+      <i class="ph ph-file-text"></i>
+      <span>OpenCV</span>
+    </a>
+  </div>
   <script>
     // footer year
     document.getElementById('footer-year').textContent = new Date().getFullYear();

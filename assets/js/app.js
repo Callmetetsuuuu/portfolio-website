@@ -259,6 +259,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Floating downloads visibility: hide while scrolling, show when idle
+document.addEventListener('DOMContentLoaded', function floatingDownloads() {
+  const container = document.getElementById('floating-downloads');
+  if (!container) return;
+  let timeout = null;
+  // ensure visible initially
+  container.classList.remove('hidden');
+  window.addEventListener('scroll', () => {
+    container.classList.add('hidden');
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      container.classList.remove('hidden');
+    }, 600);
+  }, { passive: true });
+});
+
 // Project Gallery functionality
 // Each project has its own folder: assets/images/projects/{project-id}/
 // Place all gallery images for each project in their respective folders
