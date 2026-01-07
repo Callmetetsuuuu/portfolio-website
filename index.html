@@ -115,6 +115,20 @@
           </div>
           <span class="label">About me</span>
         </div>
+        <div class="nav-item" title="Expertise" data-page="expertise">
+          <div class="icon-wrapper">
+            <i class="ph ph-code"></i>
+            <span class="mini-label">Expertise</span>
+          </div>
+          <span class="label">Expertise</span>
+        </div>
+        <div class="nav-item" title="Certificates" data-page="certificates">
+          <div class="icon-wrapper">
+            <i class="ph ph-certificate"></i>
+            <span class="mini-label">Certificates</span>
+          </div>
+          <span class="label">Certificates</span>
+        </div>
         <div class="nav-item" title="Projects" data-page="projects">
           <div class="icon-wrapper">
             <i class="ph ph-squares-four"></i>
@@ -122,38 +136,21 @@
           </div>
           <span class="label">Projects</span>
         </div>
-        <div class="nav-item" title="Skills" data-page="skills">
-          <div class="icon-wrapper">
-            <i class="ph ph-code"></i>
-            <span class="mini-label">Skills</span>
-          </div>
-          <span class="label">Skills</span>
-        </div>
-        <div class="nav-item" title="Eligibility" data-page="eligibility">
-          <div class="icon-wrapper">
-            <i class="ph ph-trophy"></i>
-            <span class="mini-label">Eligibility</span>
-          </div>
-          <span class="label">Eligibility</span>
-        </div>
-      </nav>
-
-      <nav class="space-y-1 mt-2">
-        <div class="nav-item" title="Games" data-page="games">
+        <div class="nav-item nav-sub-item" title="Games" data-page="games">
           <div class="icon-wrapper">
             <i class="ph ph-game-controller"></i>
             <span class="mini-label">Games</span>
           </div>
           <span class="label">Games</span>
         </div>
-        <div class="nav-item" title="Web Apps" data-page="web-apps">
+        <div class="nav-item nav-sub-item" title="Web Apps" data-page="web-apps">
           <div class="icon-wrapper">
             <i class="ph ph-browser"></i>
             <span class="mini-label">Web Apps</span>
           </div>
           <span class="label">Web Apps</span>
         </div>
-        <div class="nav-item" title="AI Projects" data-page="ai-projects">
+        <div class="nav-item nav-sub-item" title="AI Projects" data-page="ai-projects">
           <div class="icon-wrapper">
             <i class="ph ph-robot"></i>
             <span class="mini-label">AI Projects</span>
@@ -170,7 +167,7 @@
         <!-- About Section -->
         <section id="about" class="section-content">
           <!-- Banner Section -->
-          <div id="banner" class="max-h-[200px] mb-1 w-full overflow-hidden bg-center bg-cover">
+          <div id="banner" class="max-h-[200px] relative top-[-35px] mb-1 w-full overflow-hidden bg-center bg-cover">
             <div class="relative w-full overflow-hidden rounded-lg cursor-pointer group" onclick="showImageModal()">
               <img src="assets/images/banner.jpg" alt="Banner" id="banner-img"
                 class="w-full h-full object-cover block" />
@@ -371,137 +368,14 @@
           </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-content mb-12">
-          <h2 class="text-2xl font-semibold mb-4">Latest Works</h2>
-
-          <div class="tabs mb-4" role="tablist" aria-label="Project categories">
-            <button class="tab-btn active" data-tab="latest" role="tab" aria-selected="true">Latest</button>
-            <button class="tab-btn" data-tab="apps" role="tab">Apps</button>
-            <button class="tab-btn" data-tab="web" role="tab">Webs</button>
-            <button class="tab-btn" data-tab="system" role="tab">Systems</button>
-            <button class="tab-btn" data-tab="gamedev" role="tab">GameDev</button>
+        <!-- Expertise Section (formerly Skills) -->
+        <section id="expertise" class="section-content mb-12">
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold mb-2">Expertise</h2>
+            <p class="text-text2">Technical expertise across frontend, backend, databases, design tools, and game
+              development.</p>
           </div>
-
-          <div class="tab-contents">
-            <!-- Latest -->
-            <div data-content="latest" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article class="p-4 rounded-lg bg-white shadow">
-                <h3 class="font-semibold">Portfolio redesign</h3>
-                <p class="text-sm text-text2 mt-1">A modern, responsive portfolio built with Tailwind and vanilla JS.
-                </p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2">
-                    <span class="project-badge badge-finished">Web</span>
-                  </div>
-                  <div class="flex gap-2">
-                    <a href="#" class="text-sm text-primary">View</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="p-4 rounded-lg bg-white shadow">
-                <h3 class="font-semibold">ToDo Mobile App</h3>
-                <p class="text-sm text-text2 mt-1">A small cross-platform app built with Capacitor and React.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-ongoing">App</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <article class="p-4 rounded-lg bg-white shadow extra latest-extra hidden">
-                <h3 class="font-semibold">Chatbot System</h3>
-                <p class="text-sm text-text2 mt-1">Prototype of a conversational agent for support automation.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-ongoing">AI</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <div class="col-span-full flex justify-center mt-2">
-                <button class="tab-show-more text-sm text-text2" data-target="latest">Show more</button>
-              </div>
-            </div>
-
-            <!-- Apps -->
-            <div data-content="apps" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article class="p-4 rounded-lg bg-white shadow">
-                <h3 class="font-semibold">Expense Tracker</h3>
-                <p class="text-sm text-text2 mt-1">React Native app to track personal expenses.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-finished">App</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <article class="p-4 rounded-lg bg-white shadow extra apps-extra hidden">
-                <h3 class="font-semibold">Notes Sync</h3>
-                <p class="text-sm text-text2 mt-1">Cross-device notes sync using IndexedDB and cloud sync.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-ongoing">App</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <div class="col-span-full flex justify-center mt-2">
-                <button class="tab-show-more text-sm text-text2" data-target="apps">Show more</button>
-              </div>
-            </div>
-
-            <!-- Webs -->
-            <div data-content="web" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article class="p-4 rounded-lg bg-white shadow">
-                <h3 class="font-semibold">E-commerce UI</h3>
-                <p class="text-sm text-text2 mt-1">Frontend for an online store with product filters and carts.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-finished">Web</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <div class="col-span-full flex justify-center mt-2">
-                <button class="tab-show-more text-sm text-text2" data-target="web">Show more</button>
-              </div>
-            </div>
-
-            <!-- Systems -->
-            <div data-content="system" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article class="p-4 rounded-lg bg-white shadow">
-                <h3 class="font-semibold">Inventory System</h3>
-                <p class="text-sm text-text2 mt-1">PHP/MySQL system for small business inventory management.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-finished">System</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <div class="col-span-full flex justify-center mt-2">
-                <button class="tab-show-more text-sm text-text2" data-target="system">Show more</button>
-              </div>
-            </div>
-
-            <!-- GameDev -->
-            <div data-content="gamedev" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article class="p-4 rounded-lg bg-white shadow">
-                <h3 class="font-semibold">2D Platformer</h3>
-                <p class="text-sm text-text2 mt-1">Small platformer demo made in Godot.</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2"><span class="project-badge badge-ongoing">GameDev</span></div>
-                  <div class="flex gap-2"><a href="#" class="text-sm text-primary">View</a></div>
-                </div>
-              </article>
-
-              <div class="col-span-full flex justify-center mt-2">
-                <button class="tab-show-more text-sm text-text2" data-target="gamedev">Show more</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section-content mb-12">
-          <h2 class="text-2xl font-semibold mb-6">Core Skills</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             <div class="p-4 rounded-lg bg-hover">
               <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
@@ -512,7 +386,8 @@
               <div class="text-sm text-text2 space-y-1">
                 <p>HTML &amp; CSS</p>
                 <p>JavaScript (ES6+)</p>
-                <p>Responsive Design</p>
+                <p>Tailwind</p>
+                <p>Bootstrap 5</p>
               </div>
             </div>
 
@@ -540,7 +415,6 @@
               <div class="text-sm text-text2 space-y-1">
                 <p>MySQL</p>
                 <p>PostgreSQL</p>
-                <p>MongoDB</p>
               </div>
             </div>
 
@@ -554,7 +428,6 @@
               <div class="text-sm text-text2 space-y-1">
                 <p>Figma</p>
                 <p>Canva</p>
-                <p>UI component kits</p>
               </div>
             </div>
 
@@ -566,56 +439,511 @@
                 <h3 class="font-medium">Game Dev</h3>
               </div>
               <div class="text-sm text-text2 space-y-1">
-                <p>Unity (C#)</p>
+                <p>Unity</p>
                 <p>Pygame</p>
-                <p>Godot</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-hover">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <i class="ph ph-terminal text-xl"></i>
+                </div>
+                <h3 class="font-medium">Programming Languages</h3>
+              </div>
+              <div class="text-sm text-text2 space-y-1">
+                <p>Java</p>
+                <p>C++</p>
+                <p>JavaScript</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Eligibility Section -->
-        <section id="eligibility" class="section-content mb-12">
-          <h2 class="text-2xl font-semibold mb-6">Eligibility &amp; Achievements</h2>
-          <div class="space-y-4">
-            <div class="p-4 rounded-lg bg-hover">
-              <h3 class="font-medium">🏆 Best Capstone Project 2025</h3>
-              <p class="text-sm text-text2">AI-Powered Emotion-Based Music Recommendation System</p>
+        <!-- Certificates Section (formerly Eligibility) -->
+        <section id="certificates" class="section-content mb-12">
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold mb-2">Certificates &amp; Achievements</h2>
+            <p class="text-text2">Academic achievements, certifications, and professional milestones that demonstrate my
+              commitment to excellence.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                  <i class="ph ph-trophy text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold mb-1">Best Capstone Project 2025</h3>
+                  <p class="text-sm text-text2 leading-relaxed">Awarded for developing an AI-Powered Emotion-Based Music
+                    Recommendation System that analyzes user emotions to suggest personalized music tracks.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <h3 class="font-medium">📚 Dean's Lister</h3>
-              <p class="text-sm text-text2">3 consecutive semesters</p>
+            <div class="p-6 rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                  <i class="ph ph-graduation-cap text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold mb-1">Dean's Lister</h3>
+                  <p class="text-sm text-text2 leading-relaxed">Achieved academic excellence with Dean's List
+                    recognition for 3 consecutive semesters, maintaining high GPA while balancing coursework and
+                    projects.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="p-4 rounded-lg bg-hover">
-              <h3 class="font-medium">💻 Active Developer</h3>
-              <p class="text-sm text-text2">50+ GitHub commits/month average</p>
+            <div class="p-6 rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                  <i class="ph ph-code text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold mb-1">Active Developer</h3>
+                  <p class="text-sm text-text2 leading-relaxed">Consistent contributor to open-source projects with an
+                    average of 50+ GitHub commits per month, demonstrating continuous learning and development.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-content mb-12">
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold mb-2">Latest Works</h2>
+            <p class="text-text2">A collection of projects showcasing my skills across web development, mobile apps,
+              systems, and game development.</p>
+          </div>
+
+          <div class="tabs mb-6" role="tablist" aria-label="Project categories">
+            <button class="tab-btn active" data-tab="latest" role="tab" aria-selected="true">Latest</button>
+            <button class="tab-btn" data-tab="apps" role="tab">Apps</button>
+            <button class="tab-btn" data-tab="web" role="tab">Webs</button>
+            <button class="tab-btn" data-tab="system" role="tab">Systems</button>
+            <button class="tab-btn" data-tab="games" role="tab">Games</button>
+            <button class="tab-btn" data-tab="web-apps" role="tab">Web Apps</button>
+            <button class="tab-btn" data-tab="ai-projects" role="tab">AI Projects</button>
+          </div>
+
+          <div class="tab-contents">
+            <!-- Latest -->
+            <div data-content="latest" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/banner.jpg" alt="Portfolio redesign"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Portfolio Redesign</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">A modern, responsive portfolio built with Tailwind
+                    CSS and vanilla JavaScript. Features smooth scrolling navigation, dynamic content loading, and a
+                    clean, minimalist design.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/img.png" alt="ToDo Mobile App"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">ToDo Mobile App</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">A cross-platform mobile application built with
+                    Capacitor and React. Features offline support, task categorization, and intuitive user interface.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-ongoing">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border extra latest-extra hidden">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/prof.png" alt="Chatbot System"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Chatbot System</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">Prototype of a conversational AI agent for customer
+                    support automation. Built with natural language processing and machine learning capabilities.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-ongoing">AI Dev</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="latest">Show more</button>
+              </div>
+            </div>
+
+            <!-- Apps -->
+            <div data-content="apps" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/img.png" alt="Expense Tracker"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Expense Tracker</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">React Native mobile app for tracking personal
+                    expenses. Features budget management, category filtering, and visual spending analytics.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border extra apps-extra hidden">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/banner.jpg" alt="Notes Sync"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Notes Sync</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">Cross-device notes synchronization app using
+                    IndexedDB and cloud sync. Real-time updates across all devices with conflict resolution.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-ongoing">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="apps">Show more</button>
+              </div>
+            </div>
+
+            <!-- Webs -->
+            <div data-content="web" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/banner.jpg" alt="E-commerce UI"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">E-commerce UI</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">Modern frontend for an online store with advanced
+                    product filters, shopping cart functionality, and seamless checkout experience.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="web">Show more</button>
+              </div>
+            </div>
+
+            <!-- Systems -->
+            <div data-content="system" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/img.png" alt="Inventory System"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Inventory System</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">Complete PHP/MySQL inventory management system for
+                    small businesses. Features stock tracking, supplier management, and sales reporting.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="system">Show more</button>
+              </div>
+            </div>
+
+            <!-- Games -->
+            <div data-content="games" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/prof.png" alt="2D Platformer"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">2D Platformer</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">A fast-paced 2D platformer demo built in Godot
+                    Engine. Features smooth character movement, dynamic level design, and engaging gameplay mechanics
+                    with collectibles and obstacles.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-ongoing">Game</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/img.png" alt="Puzzle Prototype"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Puzzle Prototype</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">Grid-based puzzle game with progressive difficulty
+                    levels. Features intuitive controls, strategic thinking challenges, and a scoring system that
+                    rewards efficiency.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">Game</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="games">Show more</button>
+              </div>
+            </div>
+
+            <!-- Web Apps -->
+            <div data-content="web-apps" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/banner.jpg" alt="Portfolio Website"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Portfolio Website</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">This responsive portfolio website built with
+                    Tailwind CSS and vanilla JavaScript. Features smooth scrolling navigation, dynamic content sections,
+                    and a clean, modern design aesthetic.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/img.png" alt="Admin Dashboard"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Admin Dashboard</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">A comprehensive responsive dashboard layout for
+                    analytics and data visualization. Features real-time charts, user management, and customizable
+                    widgets.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-ongoing">Web/App</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="web-apps">Show more</button>
+              </div>
+            </div>
+
+            <!-- AI Projects -->
+            <div data-content="ai-projects" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/prof.png" alt="Emotion-Based Music Recommender"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Emotion-Based Music Recommender</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">AI-powered system that analyzes user emotions
+                    through facial recognition and text sentiment to recommend personalized music tracks. Winner of Best
+                    Capstone Project 2025.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-finished">AI Dev</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                  <img src="assets/images/banner.jpg" alt="Support Chatbot"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2">Support Chatbot</h3>
+                  <p class="text-sm text-text2 mb-4 leading-relaxed">Prototype conversational AI agent for customer
+                    support automation. Features natural language understanding, context awareness, and multi-turn
+                    dialogue capabilities.</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-text2 font-medium">Project:</span>
+                      <span class="project-badge badge-ongoing">AI Dev</span>
+                    </div>
+                    <a href="#"
+                      class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                      View <i class="ph ph-arrow-right text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="col-span-full flex justify-center mt-4">
+                <button class="tab-show-more text-sm font-medium text-text2 hover:text-primary transition-colors"
+                  data-target="ai-projects">Show more</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         <!-- Games Section -->
         <section id="games" class="section-content mb-12">
-          <h2 class="text-2xl font-semibold mb-4">Games</h2>
-          <p class="text-text2 mb-4">Selected game development experiments and prototypes.</p>
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold mb-2">Games</h2>
+            <p class="text-text2">Game development experiments and prototypes showcasing creativity in gameplay
+              mechanics, level design, and player engagement.</p>
+          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <article class="p-4 rounded-lg bg-white shadow">
-              <h3 class="font-semibold">2D Platformer</h3>
-              <p class="text-sm text-text2 mt-1">A fast-paced platformer demo built in Godot.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <span class="project-badge badge-ongoing">GameDev</span>
-                <a href="#" class="text-sm text-primary">View</a>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article
+              class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                <img src="assets/images/prof.png" alt="2D Platformer"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-semibold mb-2">2D Platformer</h3>
+                <p class="text-sm text-text2 mb-4 leading-relaxed">A fast-paced 2D platformer demo built in Godot
+                  Engine. Features smooth character movement, dynamic level design, and engaging gameplay mechanics with
+                  collectibles and obstacles.</p>
+                <div class="flex items-center justify-between">
+                  <span class="project-badge badge-ongoing">GameDev</span>
+                  <a href="#" class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                    View <i class="ph ph-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
             </article>
 
-            <article class="p-4 rounded-lg bg-white shadow">
-              <h3 class="font-semibold">Puzzle Prototype</h3>
-              <p class="text-sm text-text2 mt-1">Grid-based puzzle with increasing difficulty.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <span class="project-badge badge-finished">GameDev</span>
-                <a href="#" class="text-sm text-primary">View</a>
+            <article
+              class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                <img src="assets/images/img.png" alt="Puzzle Prototype"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-semibold mb-2">Puzzle Prototype</h3>
+                <p class="text-sm text-text2 mb-4 leading-relaxed">Grid-based puzzle game with progressive difficulty
+                  levels. Features intuitive controls, strategic thinking challenges, and a scoring system that rewards
+                  efficiency.</p>
+                <div class="flex items-center justify-between">
+                  <span class="project-badge badge-finished">GameDev</span>
+                  <a href="#" class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                    View <i class="ph ph-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -623,25 +951,50 @@
 
         <!-- Web Apps Section -->
         <section id="web-apps" class="section-content mb-12">
-          <h2 class="text-2xl font-semibold mb-4">Web Applications</h2>
-          <p class="text-text2 mb-4">Web applications and dashboards I have worked on.</p>
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold mb-2">Web Applications</h2>
+            <p class="text-text2">Modern web applications and interactive dashboards built with responsive design
+              principles and user experience in mind.</p>
+          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <article class="p-4 rounded-lg bg-white shadow">
-              <h3 class="font-semibold">Portfolio Website</h3>
-              <p class="text-sm text-text2 mt-1">This portfolio, built with Tailwind CSS and vanilla JavaScript.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <span class="project-badge badge-finished">Web</span>
-                <a href="#" class="text-sm text-primary">View</a>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article
+              class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                <img src="assets/images/banner.jpg" alt="Portfolio Website"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-semibold mb-2">Portfolio Website</h3>
+                <p class="text-sm text-text2 mb-4 leading-relaxed">This responsive portfolio website built with Tailwind
+                  CSS and vanilla JavaScript. Features smooth scrolling navigation, dynamic content sections, and a
+                  clean, modern design aesthetic.</p>
+                <div class="flex items-center justify-between">
+                  <span class="project-badge badge-finished">Web</span>
+                  <a href="#" class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                    View <i class="ph ph-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
             </article>
 
-            <article class="p-4 rounded-lg bg-white shadow">
-              <h3 class="font-semibold">Admin Dashboard</h3>
-              <p class="text-sm text-text2 mt-1">A responsive dashboard layout for analytics data.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <span class="project-badge badge-ongoing">Web</span>
-                <a href="#" class="text-sm text-primary">View</a>
+            <article
+              class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                <img src="assets/images/img.png" alt="Admin Dashboard"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-semibold mb-2">Admin Dashboard</h3>
+                <p class="text-sm text-text2 mb-4 leading-relaxed">A comprehensive responsive dashboard layout for
+                  analytics and data visualization. Features real-time charts, user management, and customizable
+                  widgets.</p>
+                <div class="flex items-center justify-between">
+                  <span class="project-badge badge-ongoing">Web</span>
+                  <a href="#" class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                    View <i class="ph ph-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -649,29 +1002,61 @@
 
         <!-- AI Projects Section -->
         <section id="ai-projects" class="section-content mb-12">
-          <h2 class="text-2xl font-semibold mb-4">AI Projects</h2>
-          <p class="text-text2 mb-4">Experiments with machine learning and conversational agents.</p>
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold mb-2">AI Projects</h2>
+            <p class="text-text2">Artificial intelligence and machine learning projects exploring emotion recognition,
+              natural language processing, and intelligent recommendation systems.</p>
+          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <article class="p-4 rounded-lg bg-white shadow">
-              <h3 class="font-semibold">Emotion-Based Music Recommender</h3>
-              <p class="text-sm text-text2 mt-1">Recommends songs based on detected user emotion.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <span class="project-badge badge-finished">AI</span>
-                <a href="#" class="text-sm text-primary">View</a>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article
+              class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                <img src="assets/images/prof.png" alt="Emotion-Based Music Recommender"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-semibold mb-2">Emotion-Based Music Recommender</h3>
+                <p class="text-sm text-text2 mb-4 leading-relaxed">AI-powered system that analyzes user emotions through
+                  facial recognition and text sentiment to recommend personalized music tracks. Winner of Best Capstone
+                  Project 2025.</p>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-text2 font-medium">Project:</span>
+                    <span class="project-badge badge-finished">AI Dev</span>
+                  </div>
+                  <a href="#" class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                    View <i class="ph ph-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
             </article>
 
-            <article class="p-4 rounded-lg bg-white shadow">
-              <h3 class="font-semibold">Support Chatbot</h3>
-              <p class="text-sm text-text2 mt-1">Prototype conversational agent for customer support.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <span class="project-badge badge-ongoing">AI</span>
-                <a href="#" class="text-sm text-primary">View</a>
+            <article
+              class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-border">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
+                <img src="assets/images/banner.jpg" alt="Support Chatbot"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-semibold mb-2">Support Chatbot</h3>
+                <p class="text-sm text-text2 mb-4 leading-relaxed">Prototype conversational AI agent for customer
+                  support automation. Features natural language understanding, context awareness, and multi-turn
+                  dialogue capabilities.</p>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-text2 font-medium">Project:</span>
+                    <span class="project-badge badge-ongoing">AI Dev</span>
+                  </div>
+                  <a href="#" class="text-sm font-medium text-primary hover:text-primary-hover flex items-center gap-1">
+                    View <i class="ph ph-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
             </article>
           </div>
         </section>
+
       </div>
     </main>
   </div>

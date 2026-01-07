@@ -142,9 +142,9 @@ function wireSearchModal() {
 
   const keywords = [
     'About',
+    'Expertise',
+    'Certificates',
     'Projects',
-    'Skills',
-    'Eligibility',
     'Games',
     'Web Apps',
     'AI Projects',
@@ -155,13 +155,13 @@ function wireSearchModal() {
 
   const sectionMap = {
     about: 'about',
+    expertise: 'expertise',
+    certificates: 'certificates',
     projects: 'projects',
-    skills: 'skills',
-    eligibility: 'eligibility',
-    games: 'games',
-    'web apps': 'web-apps',
-    'ai projects': 'ai-projects',
-    contact: 'contact'
+    games: 'projects', // Games is now a tab in Projects
+    'web apps': 'projects', // Web Apps is now a tab in Projects
+    'ai projects': 'projects', // AI Projects is now a tab in Projects
+    contact: 'about' // Contact is within About section
   };
 
   function openModal() {
