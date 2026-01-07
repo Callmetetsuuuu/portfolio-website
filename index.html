@@ -269,27 +269,45 @@
                 </div>
 
                 <!-- Right Side: Get in Touch -->
-                <div id="contact" class="w-full lg:w-auto lg:min-w-[320px]">
-                  <div class="p-6 rounded-xl bg-white border border-border shadow-sm">
+                <div id="contact" class="w-full lg:w-auto lg:min-w-[320px] self-stretch">
+                  <div class="p-6 rounded-xl bg-white border border-border shadow-sm contact-card compact">
                     <h2 class="text-xl font-semibold mb-2">Get in Touch</h2>
                     <p class="text-sm text-text2 mb-5">"Let's build something calm and powerful together."</p>
                     <div class="flex flex-col gap-3">
                       <a href="mailto:johnleonard.libanan@gmail.com"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white transition-colors group">
+                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white transition-colors group w-full">
                         <i class="ph ph-envelope text-xl"></i>
                         <span class="font-medium">Email me</span>
                         <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
                       </a>
                       <a href="https://github.com/johnleonard03" target="_blank"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text transition-colors group">
+                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text transition-colors group w-full">
                         <i class="ph ph-github-logo text-xl"></i>
                         <span class="font-medium">GitHub</span>
                         <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
                       </a>
                       <a href="https://linkedin.com/in/johnleonardlibanan" target="_blank"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text transition-colors group">
+                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text transition-colors group w-full">
                         <i class="ph ph-linkedin-logo text-xl"></i>
                         <span class="font-medium">LinkedIn</span>
+                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
+                      </a>
+                    </div>
+
+                    <!-- Downloads: Resume and OpenCV resources (place files in corresponding folders)
+                         Link targets point to `Resume/resume.pdf` and `OpenCv/` (add files later) -->
+                    <div class="mt-3 border-t border-border pt-3 flex flex-col gap-2">
+                      <a href="Resume/resume.pdf" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white transition-colors group w-full">
+                        <i class="ph ph-download text-xl"></i>
+                        <span class="font-medium">Download Resume</span>
+                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
+                      </a>
+
+                      <a href="OpenCv/" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-colors group w-full">
+                        <i class="ph ph-file-text text-xl"></i>
+                        <span class="font-medium">OpenCV Resources</span>
                         <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
                       </a>
                     </div>

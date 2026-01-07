@@ -417,3 +417,39 @@ article.group:hover {
   font-weight: 500;
   letter-spacing: 0.025em;
 }
+
+/* Compact contact card styles to reduce wasted space */
+#contact .contact-card.compact {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+#contact .contact-card.compact h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+#contact .contact-card.compact .contact-quote {
+  margin-bottom: 0.5rem;
+  font-size: 0.93rem;
+}
+
+#contact .contact-card.compact .contact-actions a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.96rem;
+}
+
+#contact .contact-card.compact .contact-actions a i { font-size: 18px; }
+
+#contact .contact-card.compact .mt-3 { margin-top: 0.5rem; }
+
+/* Make download buttons slightly smaller and tighter spacing */
+#contact .contact-card.compact .mt-3 a {
+  padding: 0.55rem 0.75rem;
+  font-size: 0.96rem;
+}
+
+/* Ensure the contact card expands to match sibling height */
+#contact.self-stretch, #contact { align-self: stretch; }
+#contact .contact-card { height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
