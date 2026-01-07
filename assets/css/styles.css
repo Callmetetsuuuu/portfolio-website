@@ -491,3 +491,15 @@ article.group:hover {
   .fd-btn span { display:none; }
   .fd-btn { padding:10px; border-radius:50%; width:48px; height:48px; justify-content:center; }
 }
+
+/* Profile bio collapsed / read-more */
+.bio-wrapper { margin-top: 0.75rem; }
+.bio { line-height: 1.5; color: var(--text2); }
+.bio.collapsed { max-height: 4.5rem; overflow: hidden; transition: max-height 220ms ease; }
+.bio.expanded { max-height: 200vh; }
+#bio-toggle { background: transparent; border: none; color: var(--primary); cursor: pointer; }
+#bio-toggle:focus { outline: 2px solid rgba(79,70,229,0.14); outline-offset: 2px; }
+
+/* Ensure left column stretches on large screens */
+.hero-left { display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-left .bio-wrapper { flex-grow: 1; }

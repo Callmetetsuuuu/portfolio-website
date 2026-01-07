@@ -16,15 +16,21 @@ window.initBanner = function initBanner(root = document) {
   };
 
   // Modal functions
-  window.showImageModal = () => {
+  // Accept an optional image path to display in the modal
+  window.showImageModal = (imgPath) => {
     if (!imageModal) return;
+    const img = imageModal.querySelector('img');
+    if (imgPath && img) {
+      img.src = imgPath;
+      img.alt = imgPath.split('/').pop();
+      img.style.maxHeight = '85vh';
+    }
     document.body.style.overflow = 'hidden';
     imageModal.classList.remove('hidden');
     imageModal.classList.add('flex');
     requestAnimationFrame(() => {
-      const bg = imageModal.querySelector('.bg-black\\/90');
-      const img = imageModal.querySelector('img');
-      if (bg) bg.style.opacity = '0.4';  // Reduced opacity (darker, less transparent)
+      const bg = imageModal.querySelector('.bg-black\/90');
+      if (bg) bg.style.opacity = '0.4';
       if (img) img.style.transform = 'scale(1)';
     });
   };

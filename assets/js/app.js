@@ -239,6 +239,37 @@ function wireSearchModal() {
   });
 }
 
+function wireCertificateClicks() {
+  // Delegate clicks for any element that has data-cert-src
+  document.addEventListener('click', (e) => {
+    const el = e.target instanceof Element ? e.target.closest('[data-cert-src]') : null;
+    if (!el) return;
+    const src = el.getAttribute('data-cert-src');
+    if (!src) return;
+    // Prevent default link behaviour if inside an anchor
+    e.preventDefault();
+    // Use global showImageModal if available
+    if (typeof window.showImageModal === 'function') {
+      window.showImageModal(src);
+    } else {
+      // Fallback: open image in new tab
+      window.open(src, '_blank');
+    }
+  });
+}
+
+function wireBioToggle() {
+  const btn = document.getElementById('bio-toggle');
+  const bio = document.getElementById('bio');
+  if (!btn || !bio) return;
+  btn.addEventListener('click', () => {
+    const isCollapsed = bio.classList.contains('collapsed');
+    bio.classList.toggle('collapsed', !isCollapsed);
+    bio.classList.toggle('expanded', isCollapsed);
+    btn.textContent = isCollapsed ? 'Show less' : 'Read more';
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.initToggle) window.initToggle();
   if (window.initBanner) window.initBanner();
@@ -247,7 +278,11 @@ document.addEventListener('DOMContentLoaded', () => {
   wireSidebarNav();
   wireSearchModal();
   wireProjectsUI();
+  wireCertificateClicks();
   initScrollSpy();
+
+  // Wire bio read-more toggle if present
+  if (typeof wireBioToggle === 'function') wireBioToggle();
 
   // Handle initial hash
   const hash = window.location.hash.replace('#', '');

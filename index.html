@@ -197,9 +197,9 @@
           <div class="max-w-6xl mb-12">
             <div>
               <!-- Hero Section -->
-              <div class="flex flex-col lg:flex-row items-start gap-8 p-4">
+              <div class="flex flex-col lg:flex-row items-start lg:items-stretch gap-8 p-4">
                 <!-- Left Side: Profile -->
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1 hero-left">
                   <!-- Profile Image -->
                   <div class="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0"
                     style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
@@ -263,6 +263,17 @@
                           </div>
                           <span id="shareFeedback" class="share-feedback text-xs text-primary hidden">Copied!</span>
                         </div>
+                      </div>
+                      <!-- Short Bio with Read more -->
+                      <div class="bio-wrapper">
+                        <div id="bio" class="bio collapsed text-sm text-text2">
+                          Hello! My name is Libanan, John Leonard A., and I am currently a 4rth year Computer Engineering student at Eastern Samar State University (Main Campus).
+
+                          I am passionate about web development, software engineering, UI/UX design and continuously learning new technologies to improve my skills. I enjoy building projects that focus on problem-solving, user experience, performance, etc.
+
+                          My goal is to grow as a Full-Stack Developer and contribute to meaningful projects while gaining real-world experience. I am motivated, adaptable, and always eager to learn.
+                        </div>
+                        <button id="bio-toggle" class="mt-2 text-sm text-primary font-medium">Read more</button>
                       </div>
                     </div>
                   </div>
@@ -427,7 +438,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div
               class="rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow overflow-hidden cursor-pointer group"
-              onclick="showImageModal('assets/images/Cert/Digital_Badge_certificate_0 (1).png')">
+              data-cert-src="assets/images/Cert/Digital_Badge_certificate_0 (1).png">
               <div class="aspect-[4/3] overflow-hidden">
                 <img src="assets/images/Cert/Digital_Badge_certificate_0 (1).png" alt="Certificate 1"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -440,7 +451,7 @@
 
             <div
               class="rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow overflow-hidden cursor-pointer group"
-              onclick="showImageModal('assets/images/Cert/Digital_Badge_certificate_0 (2).png')">
+              data-cert-src="assets/images/Cert/Digital_Badge_certificate_0 (2).png">
               <div class="aspect-[4/3] overflow-hidden">
                 <img src="assets/images/Cert/Digital_Badge_certificate_0 (2).png" alt="Certificate 2"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -453,7 +464,7 @@
 
             <div
               class="rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow overflow-hidden cursor-pointer group"
-              onclick="showImageModal('assets/images/Cert/Digital_Badge_certificate_0 (3).png')">
+              data-cert-src="assets/images/Cert/Digital_Badge_certificate_0 (3).png">
               <div class="aspect-[4/3] overflow-hidden">
                 <img src="assets/images/Cert/Digital_Badge_certificate_0 (3).png" alt="Certificate 3"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -466,7 +477,7 @@
 
             <div
               class="rounded-xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow overflow-hidden cursor-pointer group"
-              onclick="showImageModal('assets/images/Cert/Tesda Certificate.png')">
+              data-cert-src="assets/images/Cert/Tesda Certificate.png">
               <div class="aspect-[4/3] overflow-hidden">
                 <img src="assets/images/Cert/Tesda Certificate.png" alt="TESDA Certificate"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -486,7 +497,7 @@
                   <i class="ph ph-medal text-2xl"></i>
                 </div>
                 <div class="flex-1">
-                  <div class="aspect-[4/3] overflow-hidden mb-3 rounded cursor-pointer" onclick="showImageModal('assets/images/Cert/Achiv.png')">
+                  <div class="aspect-[4/3] overflow-hidden mb-3 rounded cursor-pointer" data-cert-src="assets/images/Cert/Achiv.png">
                     <img src="assets/images/Cert/Achiv.png" alt="Achievement" class="w-full h-full object-cover" />
                   </div>
                   <h3 class="text-lg font-semibold mb-1">Competition Achievement</h3>
