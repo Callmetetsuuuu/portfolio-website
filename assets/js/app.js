@@ -484,6 +484,18 @@ const projectGalleries = {
     needsImprovement: 'Game mechanics and logic need adjustments',
     thumbnail: 'assets/images/WOD.png',
     images: [
+      'assets/images/projects/wod/Screenshot 2026-01-09 012715.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012726.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012745.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012811.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012903.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012913.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012925.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012939.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 012946.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 013044.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 013055.png',
+      'assets/images/projects/wod/Screenshot 2026-01-09 013115.png',
       'assets/images/projects/wod/WODS.png'
     ]
   },
@@ -496,7 +508,22 @@ const projectGalleries = {
     strengths: 'Almost complete and fully working',
     needsImprovement: 'Character game selection layout design needs adjustment',
     thumbnail: 'assets/images/PW.png',
-    images: []
+    images: [
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 005508.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 005517.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 005525.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010357.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010418.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010505.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010521.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010537.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010552.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010608.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010628.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010639.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010847.png',
+      'assets/images/projects/typing-warriors/Screenshot 2026-01-09 010906.png'
+    ]
   },
   'essu-igp': {
     title: 'ESSU IGP',
