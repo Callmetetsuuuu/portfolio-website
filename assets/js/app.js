@@ -484,10 +484,7 @@ const projectGalleries = {
     needsImprovement: 'Game mechanics and logic need adjustments',
     thumbnail: 'assets/images/WOD.png',
     images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/wod/image1.jpg',
-      // 'assets/images/projects/wod/image2.jpg',
-      // 'assets/images/projects/wod/image3.jpg'
+      'assets/images/projects/wod/WODS.png'
     ]
   },
   'typing-warriors': {
@@ -499,11 +496,7 @@ const projectGalleries = {
     strengths: 'Almost complete and fully working',
     needsImprovement: 'Character game selection layout design needs adjustment',
     thumbnail: 'assets/images/PW.png',
-    images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/typing-warriors/image1.jpg',
-      // 'assets/images/projects/typing-warriors/image2.jpg'
-    ]
+    images: []
   },
   'essu-igp': {
     title: 'ESSU IGP',
@@ -515,9 +508,33 @@ const projectGalleries = {
     needsImprovement: 'Backend frameworks and API need to use Laravel for better code organization and file structure',
     thumbnail: 'assets/images/IGP.png',
     images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/essu-igp/image1.jpg',
-      // 'assets/images/projects/essu-igp/image2.jpg'
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001152.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001212.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001227.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001237.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001309.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001322.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001340.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001409.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001420.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001434.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001443.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001457.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001508.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001517.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001545.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001658.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001711.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001722.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001729.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001736.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001743.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001751.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001759.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001807.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 001813.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 002056.png',
+      'assets/images/projects/essu-igp/Screenshot 2026-01-09 002104.png'
     ]
   },
   'lakwatsa': {
@@ -530,9 +547,16 @@ const projectGalleries = {
     needsImprovement: 'Backend frameworks and API need to use Laravel for better code organization and file structure',
     thumbnail: 'assets/images/Lak.png',
     images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/lakwatsa/image1.jpg',
-      // 'assets/images/projects/lakwatsa/image2.jpg'
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002204.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002212.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002220.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002226.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002235.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002246.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002253.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002259.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002306.png',
+      'assets/images/projects/lakwatsa/Screenshot 2026-01-09 002316.png'
     ]
   },
   'essu-digital-archive': {
@@ -545,9 +569,18 @@ const projectGalleries = {
     needsImprovement: 'Backend frameworks and API need to use Laravel for better code organization and file structure',
     thumbnail: 'assets/images/EDA.png',
     images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/essu-digital-archive/image1.jpg',
-      // 'assets/images/projects/essu-digital-archive/image2.jpg'
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002525.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002538.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002548.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002606.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002632.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002653.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002700.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002709.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002721.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002727.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002733.png',
+      'assets/images/projects/essu-digital-archive/Screenshot 2026-01-09 002745.png'
     ]
   },
   'portfolio': {
@@ -558,11 +591,7 @@ const projectGalleries = {
     description: 'A responsive portfolio website showcasing projects, skills, and achievements with smooth navigation and modern design.',
     statusNote: 'Finished but needs to be updated yearly (monthly or whenever new credentials are added)',
     thumbnail: 'assets/images/banner.jpg',
-    images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/portfolio/image1.jpg',
-      // 'assets/images/projects/portfolio/image2.jpg'
-    ]
+    images: []
   },
   'midman-ai': {
     title: 'Midman AI',
@@ -573,9 +602,9 @@ const projectGalleries = {
     statusNote: 'Ongoing - Currently working on frontend. Design completed on Figma, starting code implementation using React/TypeScript',
     thumbnail: 'assets/images/Mid.png',
     images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/midman-ai/image1.jpg',
-      // 'assets/images/projects/midman-ai/image2.jpg'
+      'assets/images/projects/midman-ai/Screenshot 2026-01-09 003034.png',
+      'assets/images/projects/midman-ai/Screenshot 2026-01-09 003041.png',
+      'assets/images/projects/midman-ai/Screenshot 2026-01-09 003056.png'
     ]
   },
   'woogle': {
@@ -586,11 +615,7 @@ const projectGalleries = {
     description: 'A search engine project built as a challenge with an in-game friend. Features working search functionality with a dataset of around 1 million news articles (2011-2021).',
     statusNote: 'Not finished - Built as a challenge project but working with datasets of around 1 million news articles (2011-2021)',
     thumbnail: 'assets/images/woogle.png',
-    images: [
-      // Add your gallery images here, e.g.:
-      // 'assets/images/projects/woogle/image1.jpg',
-      // 'assets/images/projects/woogle/image2.jpg'
-    ]
+    images: []
   }
 };
 
@@ -667,6 +692,8 @@ function openProjectGallery(projectId) {
   
   // Only display images if they exist
   if (gallery.images && gallery.images.length > 0) {
+    // expose current gallery images for the global image modal
+    try { window._currentGalleryImages = gallery.images.slice(); } catch (e) { window._currentGalleryImages = gallery.images; }
     content.innerHTML = gallery.images.map((img, idx) => `
       <div class="aspect-video rounded-lg overflow-hidden cursor-pointer group" onclick="showImageModal('${img}')">
         <img src="${img}" alt="Gallery image ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
