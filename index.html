@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juan Luna — Portfolio</title>
+  <title>John Leonard Libanan — Portfolio</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -55,8 +55,8 @@
       <a href="#" class="flex items-center gap-2 min-w-0">
         <div class="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center font-medium">JL</div>
         <div class="flex flex-col -gap-0.5 header-title">
-          <span class="font-semibold text-sm truncate">Juan Luna</span>
-          <span class="text-xs text-text2 truncate">Developer</span>
+          <span class="font-semibold text-sm truncate">John Leonard A. Libanan</span>
+          <span class="text-xs text-text2 truncate">Fullstack Developer</span>
         </div>
       </a>
     </div>
@@ -87,18 +87,21 @@
       <button data-search-trigger class="p-2 rounded-lg hover:bg-hover md:hidden" aria-label="Search">
         <i class="ph ph-magnifying-glass text-xl"></i>
       </button>
-      <a href="https://github.com/johnleonard03" target="_blank" class="p-2 rounded-lg hover:bg-hover" title="GitHub">
-        <i class="ph ph-github-logo text-xl"></i>
+      <a href="assets/files/CV.pdf" target="_blank" rel="noopener noreferrer" class="cta-button ghost flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm"
+        aria-label="Download CV">
+        <i class="ph ph-download"></i>
+        <span class="cta-label">CV</span>
       </a>
-      <a href="#" class="cta-button ghost flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm"
-        aria-label="Download resume">
+      <a href="assets/files/Resume.pdf" target="_blank" rel="noopener noreferrer" class="cta-button ghost flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm"
+        aria-label="Download CV">
         <i class="ph ph-download"></i>
         <span class="cta-label">Resume</span>
       </a>
       <a href="mailto:johnleonard.libanan@gmail.com"
+        onclick="openEmailCompose(event, 'johnleonard.libanan@gmail.com')"
         class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-medium text-sm">
         <i class="ph ph-envelope"></i>
-        <span class="cta-label">Contact</span>
+        <span class="cta-label">Email</span>
       </a>
     </div>
   </header>
@@ -194,16 +197,16 @@
           </div>
 
           <!-- About me -->
-          <div class="max-w-6xl mb-12">
+          <div class="max-w-full mb-0 relative top-[-40px]">
             <div>
               <!-- Hero Section -->
-              <div class="flex flex-col lg:flex-row items-start lg:items-stretch gap-8 p-4">
-                <!-- Left Side: Profile -->
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1 hero-left">
+              <div class="flex flex-col lg:flex-cols items-start lg:items-stretch gap-4 p-4">
+                <!-- top Side: Profile -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1 hero-left" >
                   <!-- Profile Image -->
-                  <div class="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0"
+                    <div class="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0 cursor-pointer"
                     style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
-                    <img src="assets/images/prof.png" alt="Juan Luna" class="w-full h-full object-cover" />
+                    <img src="assets/images/prof.png" alt="Juan Luna" class="w-full h-full object-cover" onclick="showImageModal('assets/images/prof.png')" />
                     <div class="absolute inset-0 ring-2 ring-primary/20 rounded-2xl"></div>
                   </div>
 
@@ -212,7 +215,7 @@
                     <div class="flex flex-col gap-4">
                       <div>
                         <div class="flex items-center justify-center md:justify-start gap-3">
-                          <h1 class="text-4xl font-bold mb-1">Juan Luna</h1>
+                          <h1 class="text-4xl font-bold mb-1">John Leonard A. Libanan</h1>
                         </div>
                         <div class="chip flex items-center justify-center md:justify-start w-fit px-1.5 pr-2.5">
                           <span class="text-primary" title="Trusted freelancer" aria-hidden="true">
@@ -225,7 +228,7 @@
                           <span>Computer Engineering &amp; Fullstack Developer</span>
                         </div>
                         <div class="flex flex-wrap gap-2 text-sm mt-2 justify-center md:justify-start">
-                          <span class="chip"><i class="ph ph-briefcase"></i> Freelance</span>
+                          <span class="chip"><i class="ph ph-briefcase"></i> Freelancer</span>
                           <span class="chip"><i class="ph ph-map-pin"></i> Philippines</span>
                           <span class="chip"><i class="ph ph-calendar"></i> 22 yrs old</span>
                         </div>
@@ -263,174 +266,246 @@
                           </div>
                           <span id="shareFeedback" class="share-feedback text-xs text-primary hidden">Copied!</span>
                         </div>
-                      </div>
-                      <!-- Short Bio with Read more -->
-                      <div class="bio-wrapper">
-                        <div id="bio" class="bio collapsed text-sm text-text2">
-                          Hello! My name is Libanan, John Leonard A., and I am currently a 4rth year Computer Engineering student at Eastern Samar State University (Main Campus).
 
-                          I am passionate about web development, software engineering, UI/UX design and continuously learning new technologies to improve my skills. I enjoy building projects that focus on problem-solving, user experience, performance, etc.
-
-                          My goal is to grow as a Full-Stack Developer and contribute to meaningful projects while gaining real-world experience. I am motivated, adaptable, and always eager to learn.
-                        </div>
-                        <button id="bio-toggle" class="mt-2 text-sm text-primary font-medium">Read more</button>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
+                <!-- Bottom Profile: About & Contact -->
+                <div class="rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-border shadow-md p-6">
 
-                <!-- Right Side: Get in Touch -->
-                <div id="contact" class="w-full lg:w-auto lg:min-w-[320px] self-stretch">
-                  <div class="p-6 rounded-xl bg-white border border-border shadow-sm contact-card compact">
-                    <h2 class="text-xl font-semibold mb-2">Get in Touch</h2>
-                    <p class="text-sm text-text2 mb-5">"Let's build something calm and powerful together."</p>
-                    <div class="flex flex-col gap-3">
-                      <a href="mailto:johnleonard.libanan@gmail.com"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white transition-colors group w-full">
-                        <i class="ph ph-envelope text-xl"></i>
-                        <span class="font-medium">Email me</span>
-                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
-                      </a>
-                      <a href="https://github.com/johnleonard03" target="_blank"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text transition-colors group w-full">
-                        <i class="ph ph-github-logo text-xl"></i>
-                        <span class="font-medium">GitHub</span>
-                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
-                      </a>
-                      <a href="https://linkedin.com/in/johnleonardlibanan" target="_blank"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-hover hover:bg-hover/90 text-text2 hover:text-text transition-colors group w-full">
-                        <i class="ph ph-linkedin-logo text-xl"></i>
-                        <span class="font-medium">LinkedIn</span>
-                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
-                      </a>
-                    </div>
+                <!-- Header -->
+                <div class="flex items-center gap-3 mb-4">
+                  <i class="ph ph-user-circle text-3xl text-primary"></i>
+                  <h2 class="text-2xl font-bold text-text">Profile Overview</h2>
+                </div>
 
-                    <!-- Downloads: Resume and OpenCV resources (place files in corresponding folders)
-                         Link targets point to `Resume/resume.pdf` and `OpenCv/` (add files later) -->
-                    <div class="mt-3 border-t border-border pt-3 flex flex-col gap-2">
-                      <a href="Resume/resume.pdf" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white transition-colors group w-full">
-                        <i class="ph ph-download text-xl"></i>
-                        <span class="font-medium">Download Resume</span>
-                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
-                      </a>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-                      <a href="OpenCv/" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center gap-3 px-4 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-colors group w-full">
-                        <i class="ph ph-file-text text-xl"></i>
-                        <span class="font-medium">OpenCV Resources</span>
-                        <i class="ph ph-arrow-right ml-auto group-hover:translate-x-1 transition-transform"></i>
-                      </a>
+                  <!-- About Me -->
+                  <div class="lg:col-span-2 p-4 rounded-xl bg-surface border border-border">
+                  <h3 class="text-lg font-semibold text-text mb-2 flex items-center gap-2">
+                    <i class="ph ph-info text-primary"></i> About Me
+                  </h3>
+
+                  <p class="text-sm text-text2 leading-relaxed">
+                    Hello! My name is <span class="text-primary font-semibold">John Leonard A. Libanan</span>, and I am currently a
+                    <span class="text-primary">4th year Computer Engineering student</span> at
+                    <span class="text-primary">Eastern Samar State University (ESSU Main Campus)</span>.
+                    <br><br>
+                    I am passionate about <span class="text-text">web development, software engineering, and UI/UX design</span>,
+                    and I continuously learn new technologies to improve my skills. I enjoy building projects that focus on
+                    problem-solving, user experience, and performance.
+                    <br><br>
+                    My goal is to grow as a <span class="text-primary">Full-Stack Developer</span> and contribute to meaningful
+                    projects while gaining real-world experience. I am motivated, adaptable, and always eager to learn.
+                  </p>
+
+                  <!-- Action Buttons -->
+                  <div class="flex flex-wrap gap-3 mt-4">
+                    <a href="assets/files/Resume.pdf"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white font-semibold hover:bg-primary-hover transition">
+                    <i class="ph ph-download"></i> Download CV
+                    </a>
+
+                    <a href="mailto:libananjohnleonard@gmail.com"
+                    onclick="openEmailCompose(event, 'libananjohnleonard@gmail.com')"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition">
+                    <i class="ph ph-envelope"></i> Email Me
+                    </a>
+                  </div>
+                  </div>
+
+                  <!-- Quick Info -->
+                  <div class="p-4 rounded-xl bg-surface border border-border">
+
+                  <h3 class="text-lg font-semibold text-text mb-3 flex items-center gap-2">
+                    <i class="ph ph-identification-card text-primary"></i> Personal Info
+                  </h3>
+
+                  <ul class="space-y-3 text-sm text-text2">
+
+                    <li class="flex items-center gap-3">
+                    <i class="ph ph-cake text-primary"></i>
+                    <span><strong>Birthday:</strong> July 7, 2003</span>
+                    </li>
+
+                    <li class="flex items-center gap-3">
+                    <i class="ph ph-globe text-primary"></i>
+                    <span><strong>Country:</strong> Philippines</span>
+                    </li>
+
+                    <li class="flex items-center gap-3">
+                    <i class="ph ph-translate text-primary"></i>
+                    <span><strong>Language:</strong> Filipino, English</span>
+                    </li>
+
+                    <li class="flex items-center gap-3">
+                    <i class="ph ph-phone text-primary"></i>
+                    <span><strong>Mobile:</strong> +63 932 058 717</span>
+                    </li>
+
+                    <li class="flex items-center gap-3">
+                    <i class="ph ph-envelope text-primary"></i>
+                    <span><strong>Email:</strong> libananjohnleonard@gmail.com</span>
+                    </li>
+
+                  </ul>
+
+                  <!-- Social -->
+                  <div class="mt-4 pt-3 border-t border-border">
+                    <h4 class="text-sm font-semibold text-text mb-2">Social Links</h4>
+                    <div class="flex gap-3">
+                    <a href="https://github.com/Callmetetsuuuu" target="_blank"
+                      class="p-2 rounded-lg bg-surface hover:bg-primary hover:text-white transition">
+                      <i class="ph ph-github-logo"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/libananjohnleonard05" target="_blank"
+                      class="p-2 rounded-lg bg-surface hover:bg-primary hover:text-white transition">
+                      <i class="ph ph-facebook-logo"></i>
+                    </a>
+
+                    <a href="https://yourportfolio.com" target="_blank"
+                      class="p-2 rounded-lg bg-surface hover:bg-primary hover:text-white transition">
+                      <i class="ph ph-globe"></i>
+                    </a>
                     </div>
                   </div>
+
+                  </div>
                 </div>
-                
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Expertise Section (redesigned) -->
-        <section id="expertise" class="section-content mb-12">
-          <div class="mb-4">
-            <h2 class="text-3xl font-bold mb-2">Expertise</h2>
-            <p class="text-text2">Organized skills across frontend, backend, databases, tooling, and version control.</p>
+<!-- Expertise Section (Enhanced Visual Design) -->
+<section id="expertise" class="section-content mb-10">
+    <div class="mb-6">
+      <h2 class="text-3xl font-bold mb-2">Expertise</h2>
+      <p class="text-text2">Tools, technologies, and skills I use to build modern, fast, and user-friendly digital experiences.</p>
+  </div>
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Frontend -->
+      <article class="p-6 bg-surface border border-border rounded-xl group hover:-translate-y-1 transform transition hover:shadow-xl border-l-4 border-primary/20">
+        <div class="flex items-start gap-4">
+          <div class="w-32 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 text-primary flex items-center justify-center text-4xl">
+            <i class="ph ph-browser"></i>
           </div>
-          <div class="expert-grid">
-            <article class="expert-card">
-              <div class="expert-header">
-                <div class="expert-icon"><i class="ph ph-code"></i></div>
-                <div>
-                  <h3 class="text-base font-semibold">Frontend</h3>
-                  <div class="text-xs text-text2">UI, responsive layouts, accessibility</div>
-                </div>
-              </div>
-              <div class="skill-list mt-2">
-                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> HTML &amp; CSS</span>
-                <span class="skill-badge"><img src="assets/images/img.png" alt=""> JavaScript (ES6+)</span>
-                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> Tailwind</span>
-                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> Bootstrap</span>
-              </div>
-            </article>
-
-            <article class="expert-card">
-              <div class="expert-header">
-                <div class="expert-icon"><i class="ph ph-server"></i></div>
-                <div>
-                  <h3 class="text-base font-semibold">Backend</h3>
-                  <div class="text-xs text-text2">APIs, servers, and app logic</div>
-                </div>
-              </div>
-              <div class="skill-list mt-2">
-                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Node.js</span>
-                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> PHP</span>
-                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> Python</span>
-              </div>
-            </article>
-
-            <article class="expert-card">
-              <div class="expert-header">
-                <div class="expert-icon"><i class="ph ph-database"></i></div>
-                <div>
-                  <h3 class="text-base font-semibold">Databases</h3>
-                  <div class="text-xs text-text2">Design and scaling</div>
-                </div>
-              </div>
-              <div class="skill-list mt-2">
-                <span class="skill-badge"><img src="assets/images/img.png" alt=""> MySQL</span>
-                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> PostgreSQL</span>
-              </div>
-            </article>
-
-            <article class="expert-card">
-              <div class="expert-header">
-                <div class="expert-icon"><i class="ph ph-palette"></i></div>
-                <div>
-                  <h3 class="text-base font-semibold">Design Tools</h3>
-                  <div class="text-xs text-text2">Prototyping & assets</div>
-                </div>
-              </div>
-              <div class="skill-list mt-2">
-                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> Figma</span>
-                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Canva</span>
-              </div>
-            </article>
-
-            <article class="expert-card">
-              <div class="expert-header">
-                <div class="expert-icon"><i class="ph ph-terminal"></i></div>
-                <div>
-                  <h3 class="text-base font-semibold">Programming</h3>
-                  <div class="text-xs text-text2">Core languages</div>
-                </div>
-              </div>
-              <div class="skill-list mt-2">
-                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Java</span>
-                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> C++</span>
-                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> JavaScript</span>
-              </div>
-            </article>
-
-            <article class="expert-card">
-              <div class="expert-header">
-                <div class="expert-icon"><i class="ph ph-git-branch"></i></div>
-                <div>
-                  <h3 class="text-base font-semibold">Version Control</h3>
-                  <div class="text-xs text-text2">Git, GitHub, branching & workflows</div>
-                </div>
-              </div>
-              <div class="skill-list mt-2">
-                <span class="skill-badge"><img src="assets/images/img.png" alt=""> Git</span>
-                <span class="skill-badge"><img src="assets/images/prof.png" alt=""> GitHub</span>
-                <span class="skill-badge"><img src="assets/images/banner.jpg" alt=""> CI / Workflows</span>
-              </div>
-            </article>
-
+          <div>
+            <h3 class="text-xl font-bold text-text">Frontend</h3>
+            <p class="text-sm text-text2">Responsive interfaces</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <div class="tech-card html inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-file-html"></i>HTML</div>
+              <div class="tech-card css inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-file-css"></i>CSS</div>
+              <div class="tech-card js inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-file-js"></i>JavaScript</div>
+              <div class="tech-card tailwind inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-wind"></i>Tailwind</div>
+              <div class="tech-card bootstrap inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-bootstrap-logo"></i>Bootstrap</div>
+            </div>
           </div>
-        </section>
+        </div>
+      </article>
+
+      <!-- Backend -->
+      <article class="p-6 bg-surface border border-border rounded-xl group hover:-translate-y-1 transform transition hover:shadow-xl border-l-4 border-primary/20">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 text-primary flex items-center justify-center text-4xl">
+            <i class="ph ph-cloud"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text">Backend</h3>
+            <p class="text-sm text-text2">Logic, APIs & servers</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <div class="tech-card node inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-cube"></i>Node.js</div>
+              <div class="tech-card php inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-terminal"></i>PHP</div>
+              <div class="tech-card python inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-file-py"></i>Python</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Databases -->
+      <article class="p-6 bg-surface border border-border rounded-xl group hover:-translate-y-1 transform transition hover:shadow-xl border-l-4 border-primary/20">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 text-primary flex items-center justify-center text-4xl">
+            <i class="ph ph-stack"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text">Databases</h3>
+            <p class="text-sm text-text2">Data design & storage</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <div class="tech-card mysql inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-database"></i>MySQL</div>
+              <div class="tech-card postgres inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-database"></i>Postgres</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- UI / UX -->
+      <article class="p-6 bg-surface border border-border rounded-xl group hover:-translate-y-1 transform transition hover:shadow-xl border-l-4 border-primary/20">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 text-primary flex items-center justify-center text-4xl">
+            <i class="ph ph-sparkle"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text">UI / UX</h3>
+            <p class="text-sm text-text2">Clean & user-focused design</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <div class="tech-card figma inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-pen-nib"></i>Figma</div>
+              <div class="tech-card canva inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-image"></i>Canva</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Programming -->
+      <article class="p-6 bg-surface border border-border rounded-xl group hover:-translate-y-1 transform transition hover:shadow-xl border-l-4 border-primary/20">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 text-primary flex items-center justify-center text-4xl">
+            <i class="ph ph-lightbulb"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text">Programming</h3>
+            <p class="text-sm text-text2">Core development skills</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <div class="tech-card java inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-coffee"></i>Java</div>
+              <div class="tech-card cpp inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-code"></i>C++</div>
+              <div class="tech-card js inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-file-js"></i>JavaScript</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Version Control -->
+      <article class="p-6 bg-surface border border-border rounded-xl group hover:-translate-y-1 transform transition hover:shadow-xl border-l-4 border-primary/20">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 text-primary flex items-center justify-center text-4xl">
+            <i class="ph ph-gear"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-text">Version Control</h3>
+            <p class="text-sm text-text2">Team & project workflows</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <div class="tech-card git inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-git-branch"></i>Git</div>
+              <div class="tech-card github inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/5 text-primary"><i class="ph ph-github-logo"></i>GitHub</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
 
         <!-- Certificates Section (formerly Eligibility) -->
-        <section id="certificates" class="section-content mb-12">
+        <section id="certificates" class="section-content mb-6">
           <div class="mb-6">
             <h2 class="text-3xl font-bold mb-2">Certificates &amp; Achievements</h2>
             <p class="text-text2">Academic achievements, certifications, and professional milestones that demonstrate my
@@ -511,7 +586,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section-content mb-12">
+        <section id="projects" class="section-content mb-6">
           <div class="mb-4">
             <h2 class="text-2xl font-bold mb-1">Latest Works</h2>
             <p class="text-sm text-text2">Recent projects showcasing my development work.</p>
@@ -953,7 +1028,7 @@
 
 
         <!-- Games Section -->
-        <section id="games" class="section-content mb-12">
+        <section id="games" class="section-content mb-6">
           <div class="mb-6">
             <h2 class="text-3xl font-bold mb-2">Games</h2>
             <p class="text-text2">Game development experiments and prototypes showcasing creativity in gameplay
@@ -966,7 +1041,7 @@
               <div
                 class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden relative cursor-pointer"
                 onclick="openProjectGallery('wod')">
-                <img src="assets/images/WOD.png" alt="World of Dungeon"
+                <img src="assets/images/WODS.png" alt="World of Dungeon"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 <div
                   class="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -1042,7 +1117,7 @@
         </section>
 
         <!-- Web Apps Section -->
-        <section id="web-apps" class="section-content mb-12">
+        <section id="web-apps" class="section-content mb-6">
           <div class="mb-6">
             <h2 class="text-3xl font-bold mb-2">Web Applications</h2>
             <p class="text-text2">Modern web applications and interactive dashboards built with responsive design
@@ -1209,7 +1284,7 @@
         </section>
 
         <!-- AI Projects Section -->
-        <section id="ai-projects" class="section-content mb-12">
+        <section id="ai-projects" class="section-content mb-6">
           <div class="mb-6">
             <h2 class="text-3xl font-bold mb-2">AI Projects</h2>
             <p class="text-text2">Artificial intelligence and machine learning projects exploring emotion recognition,
@@ -1359,12 +1434,12 @@
     <div
       class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs md:text-sm text-text2">
       <div class="flex items-center gap-1">
-        <span>&copy; <span id="footer-year"></span> Juan Luna.</span>
+        <span>&copy; <span id="footer-year"></span> Website Portfolio-John Leonard A. Libanan</span>
         <span class="hidden sm:inline">All rights reserved.</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="hidden sm:inline">Built with calm UI.</span>
-        <a href="mailto:johnleonard.libanan@gmail.com" class="underline-offset-2 hover:underline">Contact</a>
+        <span class="hidden sm:inline">Built with care XD.</span>
+        <a href="libananjohnleonard@gmail.com" class="underline-offset-2 hover:underline">Contact</a>
       </div>
     </div>
   </footer>
@@ -1373,6 +1448,7 @@
   <!-- Banner and modal functionality -->
   <script src="assets/js/banner.js"></script>
   <script src="assets/js/count.js"></script>
+  <script src="assets/js/router.js"></script>
   <script src="assets/js/app.js"></script>
   <!-- Floating downloads (resume, OpenCV) -->
   <div id="floating-downloads" class="floating-downloads">
@@ -1384,10 +1460,25 @@
       <i class="ph ph-file-text"></i>
       <span>OpenCV</span>
     </a>
+    <a id="float-email" href="mailto:johnleonard.libanan@gmail.com" class="fd-btn fd-email" title="Email me">
+      <i class="ph ph-envelope"></i>
+      <span>Email</span>
+    </a>
   </div>
   <script>
     // footer year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Email compose helper: opens Gmail compose in new tab, falls back to mailto
+    function openEmailCompose(e, email, subject = '', body = ''){
+      if(e && e.preventDefault) e.preventDefault();
+      const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const win = window.open(gmail, '_blank');
+      if(!win){
+        // fallback to mailto
+        location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+    }
   </script>
 </body>
 

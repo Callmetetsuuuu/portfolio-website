@@ -194,6 +194,16 @@ function wireSearchModal() {
     }
 
     if (sectionId) {
+      // If searching for projects, allow keyword matching to filter projects
+      if (sectionId === 'projects') {
+        closeModal();
+        setTimeout(() => {
+          scrollToSection('projects');
+          searchProjects(term);
+        }, 100);
+        return;
+      }
+
       closeModal();
       setTimeout(() => scrollToSection(sectionId), 100);
     } else {
@@ -201,17 +211,167 @@ function wireSearchModal() {
     }
   }
 
-  if (suggestionsEl && !suggestionsEl.dataset.bound) {
+  // Search and filter project cards by keyword across tabs
+  function searchProjects(term) {
+    const q = term.trim().toLowerCase();
+    if (!q) return;
+
+    // Ensure Projects tab is visible by activating the 'latest' tab
+    const defaultTab = document.querySelector('.tab-btn[data-tab="latest"]');
+    if (defaultTab) defaultTab.click();
+
+    const contentPanes = document.querySelectorAll('.tab-contents [data-content]');
+    let anyMatch = false;
+
+    contentPanes.forEach((pane) => {
+      const cards = pane.querySelectorAll('article');
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const titleEl = card.querySelector('h3');
+        const descEl = card.querySelector('p');
+        const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        const desc = descEl ? descEl.textContent.toLowerCase() : '';
+        const badge = card.querySelector('.project-badge');
+        const badgeText = badge ? badge.textContent.toLowerCase() : '';
+
+        // Match against title, description, badge, and term
+        const matches = title.includes(q) || desc.includes(q) || badgeText.includes(q) || card.textContent.toLowerCase().includes(q);
+        if (matches) {
+          card.classList.remove('hidden');
+          visibleCount++;
+          anyMatch = true;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Hide pane if it has no visible cards
+      if (visibleCount === 0) {
+        pane.classList.add('hidden');
+      } else {
+        pane.classList.remove('hidden');
+      }
+    });
+
+    // Show a no-results message inside projects section if nothing matched
+    const projectsSection = document.getElementById('projects');
+    if (!projectsSection) return;
+    let noResults = projectsSection.querySelector('#projectSearchNoResults');
+    if (!anyMatch) {
+      if (!noResults) {
+        noResults = document.createElement('div');
+        noResults.id = 'projectSearchNoResults';
+        noResults.className = 'mt-6 p-6 rounded-lg bg-hover text-text2 text-center';
+        noResults.textContent = `No projects found for "${term}".`;
+        projectsSection.appendChild(noResults);
+      } else {
+        noResults.textContent = `No projects found for "${term}".`;
+        noResults.classList.remove('hidden');
+      }
+    } else if (noResults) {
+      noResults.classList.add('hidden');
+    }
+  }
+
+  // Render static suggestions (used when input is empty)
+  function renderStaticSuggestions() {
+    suggestionsEl.innerHTML = '';
     keywords.forEach((k) => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.textContent = k;
-      btn.className = 'px-3 py-1.5 rounded-full border border-border text-sm text-text2 hover:border-primary hover:text-primary transition-colors';
+      btn.className = 'px-3 py-1.5 mr-2 mb-2 rounded-full border border-border text-sm text-text2 hover:border-primary hover:text-primary transition-colors';
       btn.addEventListener('click', () => handleSelect(k));
       suggestionsEl.appendChild(btn);
     });
-    suggestionsEl.dataset.bound = '1';
   }
+
+  // Render dynamic suggestions based on the query: sections + projects
+  function renderSuggestionsForQuery(q) {
+    const query = q.trim().toLowerCase();
+    suggestionsEl.innerHTML = '';
+    if (!query) {
+      renderStaticSuggestions();
+      return;
+    }
+
+    const max = 8;
+    const items = [];
+
+    // Section suggestions (match keywords)
+    keywords.forEach((k) => {
+      if (k.toLowerCase().includes(query)) items.push({ kind: 'section', label: k, value: k });
+    });
+
+    // Project suggestions (match projectGalleries)
+    if (typeof projectGalleries === 'object') {
+      for (const [id, g] of Object.entries(projectGalleries)) {
+        const title = (g.title || '').toLowerCase();
+        const subtitle = (g.subtitle || '').toLowerCase();
+        const desc = (g.description || '').toLowerCase();
+        if (title.includes(query) || subtitle.includes(query) || desc.includes(query) || id.includes(query)) {
+          items.push({ kind: 'project', id, label: g.title || id, subtitle: g.subtitle || '' });
+        }
+        if (items.length >= max) break;
+      }
+    }
+
+    if (items.length === 0) {
+      const none = document.createElement('div');
+      none.className = 'text-sm text-text2';
+      none.textContent = 'No suggestions';
+      suggestionsEl.appendChild(none);
+      return;
+    }
+
+    items.slice(0, max).forEach((it) => {
+      if (it.kind === 'section') {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = it.label;
+        btn.className = 'px-3 py-1.5 mr-2 mb-2 rounded-full border border-border text-sm text-text2 hover:border-primary hover:text-primary transition-colors';
+        btn.addEventListener('click', () => handleSelect(it.value));
+        suggestionsEl.appendChild(btn);
+      } else if (it.kind === 'project') {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'flex items-start gap-3 p-2 mb-2 w-full rounded-lg hover:bg-hover';
+        const thumb = document.createElement('img');
+        thumb.src = projectGalleries[it.id].thumbnail || '';
+        thumb.alt = it.label;
+        thumb.className = 'w-10 h-10 object-cover rounded';
+        const wrap = document.createElement('div');
+        wrap.style.textAlign = 'left';
+        const t = document.createElement('div');
+        t.className = 'text-sm font-medium text-text';
+        t.textContent = it.label;
+        const s = document.createElement('div');
+        s.className = 'text-xs text-text2';
+        s.textContent = it.subtitle;
+        wrap.appendChild(t);
+        wrap.appendChild(s);
+        item.appendChild(thumb);
+        item.appendChild(wrap);
+        item.addEventListener('click', () => {
+          closeModal();
+          setTimeout(() => openProjectGallery(it.id), 120);
+        });
+        suggestionsEl.appendChild(item);
+      }
+    });
+  }
+
+  // Initialize suggestions container
+  if (suggestionsEl && !suggestionsEl.dataset.init) {
+    renderStaticSuggestions();
+    suggestionsEl.dataset.init = '1';
+  }
+
+  // Live update suggestions while typing
+  input.addEventListener('input', (e) => {
+    const v = e.target.value || '';
+    renderSuggestionsForQuery(v);
+  });
 
   triggers.forEach((t) => {
     if (t.dataset.searchBound === '1') return;

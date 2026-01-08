@@ -269,93 +269,112 @@
                     
                   </div>
                 </div>
-                <!-- Bottom Side: About / Contact / Links -->
-                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl"
+                <!-- Bottom Profile: About & Contact -->
+                <div class=" rounded-2xl"
                     style="background: linear-gradient(135deg, #0f172a, #020617);
-                            box-shadow: rgba(0,0,0,0.3) 0px 10px 30px;">
+                            box-shadow: rgba(0,0,0,0.35) 0px 10px 30px;">
 
-                <!-- Left: About Me -->
-                <div class="flex-1 text-center md:text-left">
-                    <h2 class="text-3xl font-bold mb-3 text-white">About Me</h2>
+                <!-- Header -->
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="ph ph-user-circle text-3xl text-sky-400"></i>
+                    <h2 class="text-2xl font-bold text-white">Profile Overview</h2>
+                </div>
 
-                    <p class="text-sm leading-relaxed text-slate-300 max-w-xl">
-                    Hello! My name is <span class="text-sky-400 font-semibold">John Leonard A. Libanan</span>, and I am currently a
-                    <span class="text-sky-400">4th year Computer Engineering student</span> at
-                    <span class="text-sky-400">Eastern Samar State University (ESSU Main Campus)</span>.
-                    <br><br>
-                    I am passionate about <span class="text-white">web development, software engineering, and UI/UX design</span>,
-                    and I continuously learn new technologies to improve my skills. I enjoy building projects that focus on
-                    problem-solving, user experience, and performance.
-                    <br><br>
-                    My goal is to grow as a <span class="text-sky-400">Full-Stack Developer</span> and contribute to meaningful
-                    projects while gaining real-world experience. I am motivated, adaptable, and always eager to learn.
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                    <!-- About Me -->
+                    <div class="lg:col-span-2 p-4 rounded-xl bg-slate-900/80">
+                    <h3 class="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                        <i class="ph ph-info text-sky-400"></i> About Me
+                    </h3>
+
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Hello! My name is <span class="text-sky-400 font-semibold">John Leonard A. Libanan</span>, and I am currently a
+                        <span class="text-sky-400">4th year Computer Engineering student</span> at
+                        <span class="text-sky-400">Eastern Samar State University (ESSU Main Campus)</span>.
+                        <br><br>
+                        I am passionate about <span class="text-white">web development, software engineering, and UI/UX design</span>,
+                        and I continuously learn new technologies to improve my skills. I enjoy building projects that focus on
+                        problem-solving, user experience, and performance.
+                        <br><br>
+                        My goal is to grow as a <span class="text-sky-400">Full-Stack Developer</span> and contribute to meaningful
+                        projects while gaining real-world experience. I am motivated, adaptable, and always eager to learn.
                     </p>
 
-                    <!-- CTA Button -->
-                    <div class="mt-5">
-                    <a href="assets/files/Resume.pdf"
-                        class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-sky-500 text-black font-semibold hover:bg-sky-400 transition">
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <a href="assets/files/Resume.pdf"
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500 text-black font-semibold hover:bg-sky-400 transition">
                         <i class="ph ph-download"></i> Download CV
-                    </a>
+                        </a>
+
+                        <a href="mailto:libananjohnleonard@gmail.com"
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-black transition">
+                        <i class="ph ph-envelope"></i> Email Me
+                        </a>
                     </div>
-                </div>
+                    </div>
 
-                <!-- Right: Contact & Social -->
-                <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <!-- Quick Info -->
+                    <div class="p-4 rounded-xl bg-slate-900/80">
 
-                    <!-- Contact Info -->
-                    <div class="p-4 rounded-xl"
-                        style="background-color:#1e293b; box-shadow: rgba(0,0,0,0.3) 0px 5px 15px;">
-                    <h3 class="font-semibold mb-3 text-white">Contact</h3>
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex items-center gap-2">
-                        <i class="ph ph-envelope text-sky-400"></i>
-                        libananjohnleonard@gmail.com
+                    <h3 class="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                        <i class="ph ph-identification-card text-sky-400"></i> Personal Info
+                    </h3>
+
+                    <ul class="space-y-3 text-sm text-slate-300">
+
+                        <li class="flex items-center gap-3">
+                        <i class="ph ph-cake text-sky-400"></i>
+                        <span><strong>Birthday:</strong> July 7, 2003</span>
                         </li>
-                        <li class="flex items-center gap-2">
+
+                        <li class="flex items-center gap-3">
+                        <i class="ph ph-globe text-sky-400"></i>
+                        <span><strong>Country:</strong> Philippines</span>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                        <i class="ph ph-translate text-sky-400"></i>
+                        <span><strong>Language:</strong> Filipino, English</span>
+                        </li>
+
+                        <li class="flex items-center gap-3">
                         <i class="ph ph-phone text-sky-400"></i>
-                        +63 932 058 717
+                        <span><strong>Mobile:</strong> +63 932 058 717</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                        <i class="ph ph-map-pin text-sky-400"></i>
-                        Philippines
+
+                        <li class="flex items-center gap-3">
+                        <i class="ph ph-envelope text-sky-400"></i>
+                        <span><strong>Email:</strong> libananjohnleonard@gmail.com</span>
                         </li>
+
                     </ul>
-                    </div>
 
-                    <!-- Social / Links -->
-                    <div class="p-4 rounded-xl"
-                        style="background-color:#1e293b; box-shadow: rgba(0,0,0,0.3) 0px 5px 15px;">
-                    <h3 class="font-semibold mb-3 text-white">Social & Portfolio</h3>
-                    <ul class="space-y-3">
-
-                        <li>
+                    <!-- Social -->
+                    <div class="mt-4 pt-3 border-t border-slate-700">
+                        <h4 class="text-sm font-semibold text-white mb-2">Social Links</h4>
+                        <div class="flex gap-3">
                         <a href="https://github.com/yourusername" target="_blank"
-                            class="flex items-center gap-2 text-slate-300 hover:text-sky-400 transition">
-                            <i class="ph ph-github-logo text-lg"></i> GitHub
+                            class="p-2 rounded-lg bg-slate-800 hover:bg-sky-400 hover:text-black transition">
+                            <i class="ph ph-github-logo"></i>
                         </a>
-                        </li>
 
-                        <li>
                         <a href="https://facebook.com/yourprofile" target="_blank"
-                            class="flex items-center gap-2 text-slate-300 hover:text-sky-400 transition">
-                            <i class="ph ph-facebook-logo text-lg"></i> Facebook
+                            class="p-2 rounded-lg bg-slate-800 hover:bg-sky-400 hover:text-black transition">
+                            <i class="ph ph-facebook-logo"></i>
                         </a>
-                        </li>
 
-                        <li>
                         <a href="https://yourportfolio.com" target="_blank"
-                            class="flex items-center gap-2 text-slate-300 hover:text-sky-400 transition">
-                            <i class="ph ph-globe text-lg"></i> Portfolio Website
+                            class="p-2 rounded-lg bg-slate-800 hover:bg-sky-400 hover:text-black transition">
+                            <i class="ph ph-globe"></i>
                         </a>
-                        </li>
-
-                    </ul>
+                        </div>
                     </div>
 
+                    </div>
                 </div>
                 </div>
-
               </div>
             </div>
           </div>
