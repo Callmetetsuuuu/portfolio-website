@@ -1,0 +1,150 @@
+          <!-- About me -->
+          <div class="max-w-full mb-12 relative top-[-40px]"style="background-color:blue">
+            <div>
+              <!-- Hero Section -->
+              <div class="flex flex-col lg:flex-cols items-start lg:items-stretch gap-4 p-4">
+                <!-- top Side: Profile -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1 hero-left" style="background-color:black">
+                  <!-- Profile Image -->
+                  <div class="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0"
+                    style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                    <img src="assets/images/prof.png" alt="Juan Luna" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 ring-2 ring-primary/20 rounded-2xl"></div>
+                  </div>
+
+                  <!-- Info -->
+                  <div class="text-center md:text-left flex-1">
+                    <div class="flex flex-col gap-4">
+                      <div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                          <h1 class="text-4xl font-bold mb-1">John Leonard A. Libanan</h1>
+                        </div>
+                        <div class="chip flex items-center justify-center md:justify-start w-fit px-1.5 pr-2.5">
+                          <span class="text-primary" title="Trusted freelancer" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" class="w-5 h-5">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                            </svg>
+                          </span>
+                          <span>Computer Engineering &amp; Fullstack Developer</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-sm mt-2 justify-center md:justify-start">
+                          <span class="chip"><i class="ph ph-briefcase"></i> Freelancer</span>
+                          <span class="chip"><i class="ph ph-map-pin"></i> Philippines</span>
+                          <span class="chip"><i class="ph ph-calendar"></i> 22 yrs old</span>
+                        </div>
+                      </div>
+                      <!-- Metrics -->
+                      <div class="metric-container grid grid-cols-3 gap-3 max-w-md mx-auto md:mx-0">
+                        <div class="px-3 py-2 rounded-lg flex items-center gap-3"
+                          style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                          <i class="ph ph-eye text-lg text-text2"></i>
+                          <div>
+                            <div id="visitsCount" class="text-sm font-semibold">1.2K</div>
+                            <div class="text-xs text-text2">Visits</div>
+                          </div>
+                        </div>
+
+                        <div id="likeBtn" role="button" tabindex="0" aria-pressed="false"
+                          class="px-3 py-2 rounded-lg bg-white flex items-center gap-3 metric-btn relative" title="Like"
+                          style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                          <i id="likeIcon" class="ph ph-thumbs-up text-lg text-text2"></i>
+                          <div>
+                            <div id="likeCount" class="text-sm font-semibold">847</div>
+                            <div class="text-xs text-text2">Likes</div>
+                          </div>
+                          <span id="likeFeedback" class="share-feedback text-xs text-primary hidden">Liked</span>
+                        </div>
+
+                        <div id="shareBtn" role="button" tabindex="0"
+                          class="px-3 py-2 rounded-lg bg-white flex items-center gap-3 metric-btn relative"
+                          title="Share"
+                          style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                          <i id="shareIcon" class="ph ph-copy text-lg text-text2"></i>
+                          <div>
+                            <div id="shareCount" class="text-sm font-semibold">0</div>
+                            <div class="text-xs text-text2">Profile Link</div>
+                          </div>
+                          <span id="shareFeedback" class="share-feedback text-xs text-primary hidden">Copied!</span>
+                        </div>
+
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <!-- bot Side: Profile -->    
+            <!-- Bottom Side: About / Links / Contact -->
+            <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl"
+                style="background-color:black; box-shadow: rgba(0,0,0,0.15) 0px 0px 0px 1px;">
+
+            <!-- Left: About Me -->
+            <div class="flex-1 text-center md:text-left">
+            <h2 class="text-2xl font-bold mb-2">About Me</h2>
+            <p class="text-text2 text-sm leading-relaxed max-w-xl">
+                I’m a Computer Engineering student and Fullstack Developer based in the Philippines.  
+                I specialize in building modern web apps, UI/UX design, and system solutions using  
+                HTML, Tailwind, JavaScript, PHP, Laravel, and MySQL.  
+                I enjoy solving real-world problems through clean code and efficient design.
+            </p>
+
+            <!-- Skills -->
+            <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start text-sm">
+                <span class="chip">HTML</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">PHP</span>
+                <span class="chip">Laravel</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">Git & GitHub</span>
+                <span class="chip">UI/UX</span>
+            </div>
+            </div>
+
+            <!-- Right: Links & Contact -->
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+
+            <!-- Contact Info -->
+            <div class="p-4 rounded-xl bg-white/5">
+                <h3 class="font-semibold mb-2">Contact</h3>
+                <ul class="space-y-2 text-text2">
+                <li><i class="ph ph-envelope"></i> johnlibanan@email.com</li>
+                <li><i class="ph ph-phone"></i> +63 9XX XXX XXXX</li>
+                <li><i class="ph ph-map-pin"></i> Philippines</li>
+                </ul>
+            </div>
+
+            <!-- Social / Portfolio Links -->
+            <div class="p-4 rounded-xl bg-white/5">
+                <h3 class="font-semibold mb-2">Links</h3>
+                <ul class="space-y-2">
+                <li>
+                    <a href="https://github.com/yourusername" target="_blank" class="flex items-center gap-2 hover:text-primary">
+                    <i class="ph ph-github-logo"></i> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="flex items-center gap-2 hover:text-primary">
+                    <i class="ph ph-linkedin-logo"></i> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yourportfolio.com" target="_blank" class="flex items-center gap-2 hover:text-primary">
+                    <i class="ph ph-globe"></i> Portfolio Website
+                    </a>
+                </li>
+                <li>
+                    <a href="assets/files/Resume.pdf" target="_blank" class="flex items-center gap-2 hover:text-primary">
+                    <i class="ph ph-file-pdf"></i> Download CV
+                    </a>
+                </li>
+                </ul>
+            </div>
+
+            </div>
+            </div>
+
+              </div>
+            </div>
+          </div>

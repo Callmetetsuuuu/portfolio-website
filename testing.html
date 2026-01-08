@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#FAFAF9] text-text">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Luna — Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#4F46E5',
+              hover: '#4338CA'
+            },
+            surface: '#F8FAFC',
+            border: '#E2E8F0',
+            hover: '#EEF2FF',
+            text: '#0F172A',
+            text2: '#475569'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="font-sans">
+
+  <!-- BACKDROP -->
+  <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+
+  <!-- HEADER -->
+  <header
+    class="fixed top-0 left-0 right-0 h-16 bg-surface border-b border-border flex items-center px-3 z-50 header-shell">
+    <div class="flex items-center gap-3 min-w-0">
+      <button id="menuToggle" class="py-2 px-3 ml-2 rounded-lg hover:bg-hover border rounded-lg">
+        <i class="ph ph-list text-xl"></i>
+      </button>
+      <a href="#" class="flex items-center gap-2 min-w-0">
+        <div class="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center font-medium">JL</div>
+        <div class="flex flex-col -gap-0.5 header-title">
+          <span class="font-semibold text-sm truncate">Juan Luna</span>
+          <span class="text-xs text-text2 truncate">Developer</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex-1 flex justify-center header-search">
+      <!-- Search Bar -->
+      <div class="max-w-[600px] w-full hidden md:flex items-center px-4">
+        <div class="flex-1 flex items-center gap-2">
+          <div class="relative flex-1 flex items-center">
+            <input type="search" placeholder="Search my projects..."
+              class="w-full h-10 pl-4 pr-12 rounded-l-full bg-hover/50 border border-border focus:border-primary focus:bg-surface outline-none text-sm" />
+            <button data-search-trigger
+              class="absolute right-0 h-10 px-6 flex items-center justify-center text-text2 hover:text-text"
+              aria-label="Search">
+              <i class="ph ph-magnifying-glass text-lg"></i>
+            </button>
+          </div>
+          <button
+            class="h-10 px-6 rounded-r-full border border-l-0 border-border hover:bg-hover flex items-center justify-center text-text2 hover:text-text">
+            <i class="ph ph-microphone text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 header-actions">
+      <!-- Mobile search icon -->
+      <button data-search-trigger class="p-2 rounded-lg hover:bg-hover md:hidden" aria-label="Search">
+        <i class="ph ph-magnifying-glass text-xl"></i>
+      </button>
+      <a href="https://github.com/johnleonard03" target="_blank" class="p-2 rounded-lg hover:bg-hover" title="GitHub">
+        <i class="ph ph-github-logo text-xl"></i>
+      </a>
+      <a href="#" class="cta-button ghost flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm"
+        aria-label="Download resume">
+        <i class="ph ph-download"></i>
+        <span class="cta-label">Resume</span>
+      </a>
+      <a href="mailto:johnleonard.libanan@gmail.com"
+        class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-medium text-sm">
+        <i class="ph ph-envelope"></i>
+        <span class="cta-label">Contact</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="flex pt-16 min-h-screen">
+    <!-- SIDEBAR -->
+    <aside id="sidebar"
+      class="fixed top-16 left-0 h-[calc(100vh-4rem)] bg-surface border-r border-border py-3 z-40 transform -translate-x-full lg:translate-x-0 overflow-y-auto transition-transform duration-75">
+      <nav class="space-y-1">
+        <div class="nav-item active" title="About" data-page="about">
+          <div class="icon-wrapper">
+            <i class="ph ph-user"></i>
+            <span class="mini-label">About me</span>
+          </div>
+          <span class="label">About me</span>
+        </div>
+        <div class="nav-item" title="Expertise" data-page="expertise">
+          <div class="icon-wrapper">
+            <i class="ph ph-code"></i>
+            <span class="mini-label">Expertise</span>
+          </div>
+          <span class="label">Expertise</span>
+        </div>
+        <div class="nav-item" title="Certificates" data-page="certificates">
+          <div class="icon-wrapper">
+            <i class="ph ph-certificate"></i>
+            <span class="mini-label">Certificates</span>
+          </div>
+          <span class="label">Certificates</span>
+        </div>
+        <div class="nav-item" title="Projects" data-page="projects">
+          <div class="icon-wrapper">
+            <i class="ph ph-squares-four"></i>
+            <span class="mini-label">Projects</span>
+          </div>
+          <span class="label">Projects</span>
+        </div>
+        <div class="nav-item nav-sub-item" title="Games" data-page="games">
+          <div class="icon-wrapper">
+            <i class="ph ph-game-controller"></i>
+            <span class="mini-label">Games</span>
+          </div>
+          <span class="label">Games</span>
+        </div>
+        <div class="nav-item nav-sub-item" title="Web Apps" data-page="web-apps">
+          <div class="icon-wrapper">
+            <i class="ph ph-browser"></i>
+            <span class="mini-label">Web Apps</span>
+          </div>
+          <span class="label">Web Apps</span>
+        </div>
+        <div class="nav-item nav-sub-item" title="AI Projects" data-page="ai-projects">
+          <div class="icon-wrapper">
+            <i class="ph ph-robot"></i>
+            <span class="mini-label">AI Projects</span>
+          </div>
+          <span class="label">AI Projects</span>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main
+      class="flex-1 p-6 bg-surface overflow-y-auto page-main lg:ml-[240px] transition-[margin] duration-150 ease-in-out">
+      <div class="w-full" id="main-content">
+        <!-- About Section -->
+        <section id="about" class="section-content">
+          <!-- Banner Section -->
+          <div id="banner" class="max-h-[200px] relative top-[-35px] mb-1 w-full overflow-hidden bg-center bg-cover">
+            <div class="relative w-full overflow-hidden rounded-lg cursor-pointer group" onclick="showImageModal()">
+              <img src="assets/images/banner.jpg" alt="Banner" id="banner-img"
+                class="w-full h-full object-cover block" />
+              <div id="banner-overlay" class="absolute inset-0 bg-gradient-to-b from-transparent to-white/60"></div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <i class="ph ph-arrows-out text-white text-3xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Modal -->
+          <div id="imageModal" class="fixed inset-0 z-[60] hidden items-center justify-center">
+            <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300"
+              onclick="hideImageModal()"></div>
+            <div class="relative z-[70] max-w-7xl mx-auto px-4 w-full">
+              <button onclick="hideImageModal()"
+                class="absolute -top-12 right-4 text-white hover:text-gray-300 transition-colors">
+                <i class="ph ph-x text-2xl"></i>
+              </button>
+              <img src="assets/images/banner.jpg" alt="Banner Full"
+                class="w-full h-auto max-h-[85vh] object-contain rounded-lg" />
+            </div>
+          </div>
+
+          <!-- About me -->
+          <div class="max-w-full mb-12 relative top-[-40px]">
+            <div>
+              <!-- Hero Section -->
+              <div class="flex flex-col lg:flex-cols items-start lg:items-stretch gap-4 p-4">
+                <!-- top Side: Profile -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 flex-1 hero-left" >
+                  <!-- Profile Image -->
+                  <div class="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0"
+                    style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                    <img src="assets/images/prof.png" alt="Juan Luna" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 ring-2 ring-primary/20 rounded-2xl"></div>
+                  </div>
+
+                  <!-- Info -->
+                  <div class="text-center md:text-left flex-1">
+                    <div class="flex flex-col gap-4">
+                      <div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                          <h1 class="text-4xl font-bold mb-1">John Leonard A. Libanan</h1>
+                        </div>
+                        <div class="chip flex items-center justify-center md:justify-start w-fit px-1.5 pr-2.5">
+                          <span class="text-primary" title="Trusted freelancer" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" class="w-5 h-5">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                            </svg>
+                          </span>
+                          <span>Computer Engineering &amp; Fullstack Developer</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-sm mt-2 justify-center md:justify-start">
+                          <span class="chip"><i class="ph ph-briefcase"></i> Freelancer</span>
+                          <span class="chip"><i class="ph ph-map-pin"></i> Philippines</span>
+                          <span class="chip"><i class="ph ph-calendar"></i> 22 yrs old</span>
+                        </div>
+                      </div>
+                      <!-- Metrics -->
+                      <div class="metric-container grid grid-cols-3 gap-3 max-w-md mx-auto md:mx-0">
+                        <div class="px-3 py-2 rounded-lg flex items-center gap-3"
+                          style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                          <i class="ph ph-eye text-lg text-text2"></i>
+                          <div>
+                            <div id="visitsCount" class="text-sm font-semibold">1.2K</div>
+                            <div class="text-xs text-text2">Visits</div>
+                          </div>
+                        </div>
+
+                        <div id="likeBtn" role="button" tabindex="0" aria-pressed="false"
+                          class="px-3 py-2 rounded-lg bg-white flex items-center gap-3 metric-btn relative" title="Like"
+                          style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                          <i id="likeIcon" class="ph ph-thumbs-up text-lg text-text2"></i>
+                          <div>
+                            <div id="likeCount" class="text-sm font-semibold">847</div>
+                            <div class="text-xs text-text2">Likes</div>
+                          </div>
+                          <span id="likeFeedback" class="share-feedback text-xs text-primary hidden">Liked</span>
+                        </div>
+
+                        <div id="shareBtn" role="button" tabindex="0"
+                          class="px-3 py-2 rounded-lg bg-white flex items-center gap-3 metric-btn relative"
+                          title="Share"
+                          style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                          <i id="shareIcon" class="ph ph-copy text-lg text-text2"></i>
+                          <div>
+                            <div id="shareCount" class="text-sm font-semibold">0</div>
+                            <div class="text-xs text-text2">Profile Link</div>
+                          </div>
+                          <span id="shareFeedback" class="share-feedback text-xs text-primary hidden">Copied!</span>
+                        </div>
+
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <!-- Bottom Side: About / Contact / Links -->
+                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl"
+                    style="background: linear-gradient(135deg, #0f172a, #020617);
+                            box-shadow: rgba(0,0,0,0.3) 0px 10px 30px;">
+
+                <!-- Left: About Me -->
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-3 text-white">About Me</h2>
+
+                    <p class="text-sm leading-relaxed text-slate-300 max-w-xl">
+                    Hello! My name is <span class="text-sky-400 font-semibold">John Leonard A. Libanan</span>, and I am currently a
+                    <span class="text-sky-400">4th year Computer Engineering student</span> at
+                    <span class="text-sky-400">Eastern Samar State University (ESSU Main Campus)</span>.
+                    <br><br>
+                    I am passionate about <span class="text-white">web development, software engineering, and UI/UX design</span>,
+                    and I continuously learn new technologies to improve my skills. I enjoy building projects that focus on
+                    problem-solving, user experience, and performance.
+                    <br><br>
+                    My goal is to grow as a <span class="text-sky-400">Full-Stack Developer</span> and contribute to meaningful
+                    projects while gaining real-world experience. I am motivated, adaptable, and always eager to learn.
+                    </p>
+
+                    <!-- CTA Button -->
+                    <div class="mt-5">
+                    <a href="assets/files/Resume.pdf"
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-sky-500 text-black font-semibold hover:bg-sky-400 transition">
+                        <i class="ph ph-download"></i> Download CV
+                    </a>
+                    </div>
+                </div>
+
+                <!-- Right: Contact & Social -->
+                <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+
+                    <!-- Contact Info -->
+                    <div class="p-4 rounded-xl"
+                        style="background-color:#1e293b; box-shadow: rgba(0,0,0,0.3) 0px 5px 15px;">
+                    <h3 class="font-semibold mb-3 text-white">Contact</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center gap-2">
+                        <i class="ph ph-envelope text-sky-400"></i>
+                        libananjohnleonard@gmail.com
+                        </li>
+                        <li class="flex items-center gap-2">
+                        <i class="ph ph-phone text-sky-400"></i>
+                        +63 932 058 717
+                        </li>
+                        <li class="flex items-center gap-2">
+                        <i class="ph ph-map-pin text-sky-400"></i>
+                        Philippines
+                        </li>
+                    </ul>
+                    </div>
+
+                    <!-- Social / Links -->
+                    <div class="p-4 rounded-xl"
+                        style="background-color:#1e293b; box-shadow: rgba(0,0,0,0.3) 0px 5px 15px;">
+                    <h3 class="font-semibold mb-3 text-white">Social & Portfolio</h3>
+                    <ul class="space-y-3">
+
+                        <li>
+                        <a href="https://github.com/yourusername" target="_blank"
+                            class="flex items-center gap-2 text-slate-300 hover:text-sky-400 transition">
+                            <i class="ph ph-github-logo text-lg"></i> GitHub
+                        </a>
+                        </li>
+
+                        <li>
+                        <a href="https://facebook.com/yourprofile" target="_blank"
+                            class="flex items-center gap-2 text-slate-300 hover:text-sky-400 transition">
+                            <i class="ph ph-facebook-logo text-lg"></i> Facebook
+                        </a>
+                        </li>
+
+                        <li>
+                        <a href="https://yourportfolio.com" target="_blank"
+                            class="flex items-center gap-2 text-slate-300 hover:text-sky-400 transition">
+                            <i class="ph ph-globe text-lg"></i> Portfolio Website
+                        </a>
+                        </li>
+
+                    </ul>
+                    </div>
+
+                </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+
+
+  <!-- FOOTER -->
+  <footer class="w-full border-t border-border bg-surface/80 backdrop-blur-sm">
+    <div
+      class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs md:text-sm text-text2">
+      <div class="flex items-center gap-1">
+        <span>&copy; <span id="footer-year"></span> Juan Luna.</span>
+        <span class="hidden sm:inline">All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline">Built with calm UI.</span>
+        <a href="mailto:johnleonard.libanan@gmail.com" class="underline-offset-2 hover:underline">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Toggle or Navar functonality -->
+  <script src="assets/js/toggle.js"></script>
+  <!-- Banner and modal functionality -->
+  <script src="assets/js/banner.js"></script>
+  <script src="assets/js/count.js"></script>
+  <script src="assets/js/app.js"></script>
+  <!-- Floating downloads (resume, OpenCV) -->
+  <div id="floating-downloads" class="floating-downloads">
+    <a id="float-resume" href="Resume/resume.pdf" target="_blank" rel="noopener noreferrer" class="fd-btn fd-resume" title="Download Resume">
+      <i class="ph ph-download"></i>
+      <span>Resume</span>
+    </a>
+    <a id="float-opencv" href="OpenCv/" target="_blank" rel="noopener noreferrer" class="fd-btn fd-opencv" title="OpenCV resources">
+      <i class="ph ph-file-text"></i>
+      <span>OpenCV</span>
+    </a>
+  </div>
+  <script>
+    // footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
